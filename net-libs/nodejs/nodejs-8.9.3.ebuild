@@ -1,3 +1,4 @@
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,11 +23,11 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	>=dev-libs/libuv-1.14.0:=
+	>=dev-libs/libuv-1.15.0:=
 	>=net-libs/http-parser-2.7.0:=
 	>=net-libs/nghttp2-1.25.0
 	sys-libs/zlib
-	icu? ( >=dev-libs/icu-58.1:= )
+	icu? ( >=dev-libs/icu-59.1:= )
 	ssl? ( >=dev-libs/openssl-1.0.2n:0=[-bindist] )
 "
 DEPEND="${RDEPEND}

@@ -15,7 +15,6 @@ dev-ada/gnat_util:static - Build gnat_util static library
 dev-ada/gnat_util:static-pic - Build gnat_util static library with pic code
 dev-ada/gnatcoll:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/gnatcoll:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
-dev-ada/gnatcoll:postgresql - Adds support for postgresql
 dev-ada/gnatcoll:projects - Adds support for projects
 dev-ada/gnatcoll:pygobject - Adds support for pygobject
 dev-ada/gnatcoll:shared - Build shared library
@@ -25,13 +24,17 @@ dev-ada/gnatmem:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/gnatmem:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
 dev-ada/gprbuild:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/gprbuild:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
-dev-ada/gprbuild:shared - Build shared library
-dev-ada/gprbuild:static - Build static library
-dev-ada/gprbuild:static-pic - Build static library with pic code
 dev-ada/gtkada:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/gtkada:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
 dev-ada/gtkada:shared - Build gtkada as shared library
 dev-ada/gtkada:static - Build gtkada as static library
+dev-ada/libadalang:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libadalang:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libgpr:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libgpr:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libgpr:shared - Build shared library
+dev-ada/libgpr:static - Build static library
+dev-ada/libgpr:static-pic - Build static library with pic code
 dev-ada/xmlada:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/xmlada:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
 dev-ada/xmlada:shared - Build shared library
@@ -121,6 +124,7 @@ dev-lua/mpack:luajit - Use dev-lang/luajit instead of dev-lang/lua
 dev-lua/say:luajit - Use dev-lang/luajit instead of dev-lang/lua
 dev-tcltk/expect-lite:debug - pull in packages needed for runtime interactive debugger
 dev-tcltk/tktreectrl:shellicon - shellicon extension
+net-libs/nodejs:inspector - Enable V8 inspector
 net-libs/nodejs:npm - Enable NPM package manager
 net-libs/nodejs:snapshot - Enable snapshot creation for faster startup
 net-libs/nodejs:systemtap - Enable SystemTAP/DTrace tracing

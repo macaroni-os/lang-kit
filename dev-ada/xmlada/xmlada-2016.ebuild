@@ -15,7 +15,7 @@ SRC_URI="http://mirrors.cdn.adacore.com/art/57399978c7a447658e0affc0 ->
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="gnat_2016 gnat_2017 +shared static static-pic"
+IUSE="+gnat_2016 gnat_2017 +shared static static-pic"
 REQUIRED_USE="|| ( shared static static-pic )
 	^^ ( gnat_2016 gnat_2017 )"
 
@@ -38,6 +38,11 @@ src_compile () {
 			emake PROCESSORS=$(makeopts_jobs) ${kind}
 		fi
 	done
+}
+
+src_test() {
+	emake test
+	emake run_test | grep DIFF && die
 }
 
 src_install () {
