@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install setup
+DEPEND=dev-lang/gnat-gpl:7.3.0 dev-ada/gnatcoll-core[gnat_2018,shared?,static-libs?,static-pic?] dev-ada/libgpr[gnat_2018,shared?,static-libs?,static-pic?] dev-ada/xmlada[gnat_2018,shared?,static-libs?,static-pic?] sqlite? ( dev-db/sqlite:3 ) postgres? ( dev-db/postgresql:* ) xref? ( dev-ada/gnatcoll-bindings[iconv,shared?,static-libs?,static-pic?] ) dev-ada/gprbuild[gnat_2018] >=app-portage/elt-patches-20170317 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=GNAT Component Collection
+EAPI=6
+HOMEPAGE=http://libre.adacore.com
+IUSE=gnat_2016 gnat_2017 +gnat_2018 gnatcoll_db2ada gnatinspect postgres +shared sql sqlite static-libs static-pic xref python_targets_python2_7
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-lang/gnat-gpl:7.3.0 dev-ada/gnatcoll-core[gnat_2018,shared?,static-libs?,static-pic?] dev-ada/libgpr[gnat_2018,shared?,static-libs?,static-pic?] dev-ada/xmlada[gnat_2018,shared?,static-libs?,static-pic?] sqlite? ( dev-db/sqlite:3 ) postgres? ( dev-db/postgresql:* ) xref? ( dev-ada/gnatcoll-bindings[iconv,shared?,static-libs?,static-pic?] )
+REQUIRED_USE=!gnat_2016 !gnat_2017 gnat_2018 sqlite? ( sql ) xref? ( sqlite ) gnatinspect? ( xref ) gnatcoll_db2ada? ( sql )
+SLOT=0
+SRC_URI=http://mirrors.cdn.adacore.com/art/5b0ce9cbc7a4475263382be6 -> gnatcoll-db-gpl-2018-src.tar.gz
+_eclasses_=autotools	dc412f38566b91012efd58b9c203e6c3	libtool	e32ea84bf82cf8987965b574672dba93	multilib	97f470f374f2e94ccab04a2fb21d811e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-single-r1	317a2557b4d7319a7418225f65accf77	python-utils-r1	c9de01becf9df3f8c10aeec3dc693f5d	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee
+_md5_=44570aa532e1097b5882d4e3cfa46e1f
