@@ -49,6 +49,9 @@ dev-ada/gtkada:shared - Build gtkada as shared library
 dev-ada/gtkada:static - Build gtkada as static library
 dev-ada/libadalang:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/libadalang:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libadalang-tools:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libadalang-tools:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libadalang-tools:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
 dev-ada/libgpr:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
 dev-ada/libgpr:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
 dev-ada/libgpr:shared - Build shared library
