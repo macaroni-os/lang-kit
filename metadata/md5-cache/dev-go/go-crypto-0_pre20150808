@@ -7,5 +7,5 @@ KEYWORDS=~amd64
 LICENSE=BSD
 SLOT=0/0_pre20150808
 SRC_URI=https://github.com/golang/crypto/archive/83f1503f771a82af8a31f358eb825e9efb5dae6c.tar.gz -> go-crypto-0_pre20150808.tar.gz
-_eclasses_=golang-base	51a1f13e065f1cff4507685d9cc268c7	golang-build	b66349c110e4ddd6203bbe8bf4ae05c1	golang-vcs-snapshot	913580335becddd3ebecefe852e47536
+_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2
 _md5_=562f0ddcd63288535e685abc7b2697f0
