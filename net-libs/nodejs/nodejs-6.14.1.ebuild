@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,22 +14,26 @@ SRC_URI="https://nodejs.org/dist/v${PV}/node-v${PV}.tar.xz"
 
 LICENSE="Apache-1.1 Apache-2.0 BSD BSD-2 MIT"
 SLOT="0"
-KEYWORDS="amd64 arm ~arm64 ppc ppc64 x86 ~amd64-linux ~x64-macos"
-IUSE="cpu_flags_x86_sse2 debug doc icu +npm +snapshot +ssl test"
+KEYWORDS="amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x64-macos"
+IUSE="cpu_flags_x86_sse2 debug doc icu inspector +npm +snapshot +ssl test"
+REQUIRED_USE="
+	${PYTHON_REQUIRED_USE}
+	inspector? ( icu ssl )
+"
 
-RDEPEND="icu? ( >=dev-libs/icu-56:= )
-	npm? ( ${PYTHON_DEPS} )
-	>=net-libs/http-parser-2.6.2:=
-	>=dev-libs/libuv-1.9.0:=
-	>=dev-libs/openssl-1.0.2g:0=[-bindist]
-	sys-libs/zlib"
-DEPEND="${RDEPEND}
+RDEPEND="
+	>=dev-libs/libuv-1.16.1:=
+	>=net-libs/http-parser-2.7.0:=
+	sys-libs/zlib
+	icu? ( >=dev-libs/icu-58.2:= )
+	ssl? ( >=dev-libs/openssl-1.0.2n:0=[-bindist] )
+"
+DEPEND="
+	${RDEPEND}
 	${PYTHON_DEPS}
-	test? ( net-misc/curl )"
-
+	test? ( net-misc/curl )
+"
 S="${WORKDIR}/node-v${PV}"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
 PATCHES=(
 	"${FILESDIR}"/gentoo-global-npm-config.patch
 )
@@ -85,12 +89,13 @@ src_prepare() {
 
 src_configure() {
 	local myarch=""
-	local myconf=( --shared-openssl --shared-libuv --shared-http-parser --shared-zlib )
-	use npm || myconf+=( --without-npm )
-	use icu && myconf+=( --with-intl=system-icu )
-	use snapshot && myconf+=( --with-snapshot )
-	use ssl || myconf+=( --without-ssl )
+	local myconf=( --shared-libuv --shared-http-parser --shared-zlib )
 	use debug && myconf+=( --debug )
+	use icu && myconf+=( --with-intl=system-icu )
+	use inspector || myconf+=( --without-inspector )
+	use npm || myconf+=( --without-npm )
+	use snapshot && myconf+=( --with-snapshot )
+	use ssl && myconf+=( --shared-openssl ) || myconf+=( --without-ssl )
 
 	case ${ABI} in
 		amd64) myarch="x64";;

@@ -1,34 +1,42 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-
-# has known failures. sigh.
-RESTRICT="test"
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="threads"
 
-inherit pax-utils python-single-r1 toolchain-funcs
+inherit flag-o-matic pax-utils python-single-r1 toolchain-funcs
 
-DESCRIPTION="Evented IO for V8 Javascript"
-HOMEPAGE="http://nodejs.org/"
-SRC_URI="http://nodejs.org/dist/v${PV}/node-v${PV}.tar.gz"
+DESCRIPTION="A JavaScript runtime built on Chrome's V8 JavaScript engine"
+HOMEPAGE="https://nodejs.org/"
+SRC_URI="https://nodejs.org/dist/v${PV}/node-v${PV}.tar.xz"
 
 LICENSE="Apache-1.1 Apache-2.0 BSD BSD-2 MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm x86 ~x64-macos"
-IUSE="debug icu +npm +snapshot +ssl"
+KEYWORDS="amd64 ~arm ~arm64 ~ppc64 ~x86 ~x64-macos"
+IUSE="cpu_flags_x86_sse2 debug icu +npm snapshot +ssl test"
 
-RDEPEND="icu? ( dev-libs/icu )
+RDEPEND="icu? ( >=dev-libs/icu-55:= )
+	npm? ( ${PYTHON_DEPS} )
+	>=net-libs/http-parser-2.5.2:=
+	>=dev-libs/libuv-1.8.0:=
+	>=dev-libs/openssl-1.0.2g:0=[-bindist]
+	sys-libs/zlib"
+DEPEND="${RDEPEND}
 	${PYTHON_DEPS}
-	ssl? ( dev-libs/openssl:0=[-bindist] )
-	>=net-libs/http-parser-2.6.1
-	>=dev-libs/libuv-1.4.2"
-DEPEND="${RDEPEND}"
+	test? ( net-misc/curl )"
 
 S="${WORKDIR}/node-v${PV}"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
+pkg_pretend() {
+	(use x86 && ! use cpu_flags_x86_sse2) && \
+		die "Your CPU doesn't support the required SSE2 instruction."
+
+	( [[ ${MERGE_TYPE} != "binary" ]] && ! test-flag-CXX -std=c++11 ) && \
+		die "Your compiler doesn't support C++11. Use GCC 4.8, Clang 3.3 or newer."
+}
 
 src_prepare() {
 	tc-export CC CXX PKG_CONFIG
@@ -52,36 +60,47 @@ src_prepare() {
 	sed -i -e "s/'lib'/'${LIBDIR}'/" lib/module.js || die
 	sed -i -e "s|\"lib\"|\"${LIBDIR}\"|" deps/npm/lib/npm.js || die
 
+	# Avoid a test that I've only been able to reproduce from emerge. It doesnt
+	# seem sandbox related either (invoking it from a sandbox works fine).
+	# The issue is that no stdin handle is openened when asked for one.
+	# It doesn't really belong upstream , so it'll just be removed until someone
+	# with more gentoo-knowledge than me (jbergstroem) figures it out.
+	rm test/parallel/test-stdout-close-unref.js || die
+
 	# debug builds. change install path, remove optimisations and override buildtype
 	if use debug; then
 		sed -i -e "s|out/Release/|out/Debug/|g" tools/install.py || die
 		BUILDTYPE=Debug
 	fi
+
+	default
 }
 
 src_configure() {
-	local myconf=()
 	local myarch=""
-	use debug && myconf+=( --debug )
-	use icu && myconf+=( --with-intl=system-icu )
+	local myconf+=( --shared-openssl --shared-libuv --shared-http-parser --shared-zlib )
 	use npm || myconf+=( --without-npm )
-	use snapshot || myconf+=( --without-snapshot )
+	use icu && myconf+=( --with-intl=system-icu )
+	use snapshot && myconf+=( --with-snapshot )
 	use ssl || myconf+=( --without-ssl )
+	use debug && myconf+=( --debug )
 
 	case ${ABI} in
-		x86) myarch="ia32";;
 		amd64) myarch="x64";;
 		arm) myarch="arm";;
+		arm64) myarch="arm64";;
+		ppc64) myarch="ppc64";;
+		x32) myarch="x32";;
+		x86) myarch="ia32";;
 		*) die "Unrecognized ARCH ${ARCH}";;
 	esac
 
+	GYP_DEFINES="linux_use_gold_flags=0
+		linux_use_bundled_binutils=0
+		linux_use_bundled_gold=0" \
 	"${PYTHON}" configure \
 		--prefix="${EPREFIX}"/usr \
 		--dest-cpu=${myarch} \
-		--shared-openssl \
-		--shared-libuv \
-		--shared-http-parser \
-		--shared-zlib \
 		--without-dtrace \
 		"${myconf[@]}" || die
 }
@@ -95,9 +114,11 @@ src_compile() {
 src_install() {
 	local LIBDIR="${ED}/usr/$(get_libdir)"
 	emake install DESTDIR="${ED}" PREFIX=/usr
-	use npm && dodoc -r "${LIBDIR}"/node_modules/npm/html
-	rm -rf "${LIBDIR}"/node_modules/npm/{doc,html} || die
-	find "${LIBDIR}"/node_modules -type f -name "LICENSE*" -or -name "LICENCE*" -delete
+	if use npm; then
+		dodoc -r "${LIBDIR}"/node_modules/npm/html
+		rm -rf "${LIBDIR}"/node_modules/npm/{doc,html} || die
+		find "${LIBDIR}"/node_modules -type f -name "LICENSE*" -or -name "LICENCE*" -delete || die
+	fi
 
 	# set up a symlink structure that npm expects..
 	dodir /usr/include/node/deps/{v8,uv}
@@ -110,8 +131,8 @@ src_install() {
 }
 
 src_test() {
-	declare -xl TESTTYPE="${BUILDTYPE}"
-	"${PYTHON}" tools/test.py --mode=${TESTTYPE} -J message simple || die
+	out/${BUILDTYPE}/cctest || die
+	"${PYTHON}" tools/test.py --mode=${BUILDTYPE,,} -J message parallel sequential || die
 }
 
 pkg_postinst() {
