@@ -2,3 +2,150 @@
 # your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using egencache *
 
+dev-ada/asis:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/asis:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/asis:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/aunit:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/aunit:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/aunit:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/aws:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/aws:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/aws:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gnat_util:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnat_util:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnat_util:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gnat_util:shared - Build gnat_util shared library
+dev-ada/gnat_util:static-pic - Build gnat_util static library with pic code
+dev-ada/gnatcoll:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnatcoll:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnatcoll:projects - Adds support for projects
+dev-ada/gnatcoll:pygobject - Adds support for pygobject
+dev-ada/gnatcoll:shared - Build shared library
+dev-ada/gnatcoll:tools - Build associated tools
+dev-ada/gnatcoll-bindings:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnatcoll-bindings:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnatcoll-bindings:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gnatcoll-bindings:shared - Build shared library
+dev-ada/gnatcoll-bindings:static-pic - Build shared library
+dev-ada/gnatcoll-core:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnatcoll-core:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnatcoll-core:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gnatcoll-core:shared - Build shared library
+dev-ada/gnatcoll-core:static-pic - Build static library with pic code
+dev-ada/gnatcoll-db:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnatcoll-db:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnatcoll-db:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gnatcoll-db:gnatcoll_db2ada - Build gnatcoll_db2ada
+dev-ada/gnatcoll-db:gnatinspect - Build gnatinspect
+dev-ada/gnatcoll-db:shared - Build shared library
+dev-ada/gnatcoll-db:sql - Build sql library
+dev-ada/gnatcoll-db:static-pic - Build shared library
+dev-ada/gnatcoll-db:xref - Build xref library
+dev-ada/gnatmem:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gnatmem:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gnatmem:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gprbuild:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gprbuild:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gprbuild:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gtkada:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/gtkada:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/gtkada:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/gtkada:shared - Build gtkada as shared library
+dev-ada/libadalang:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libadalang:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libadalang:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/libadalang:shared - Build shared library
+dev-ada/libadalang-tools:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libadalang-tools:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libadalang-tools:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/libgpr:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/libgpr:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/libgpr:gnat_2018 - Compile with dev-lang/gnat-gpl-2018
+dev-ada/libgpr:shared - Build shared library
+dev-ada/libgpr:static-pic - Build static library with pic code
+dev-ada/xmlada:gnat_2016 - Compile with dev-lang/gnat-gpl-2016
+dev-ada/xmlada:gnat_2017 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/xmlada:gnat_2018 - Compile with dev-lang/gnat-gpl-2017
+dev-ada/xmlada:shared - Build shared library
+dev-ada/xmlada:static-pic - Build static library with pic code
+dev-lang/bas:lr0 - Use the LR0 parser instead of the recursive descending parser
+dev-lang/crystal:blocking-stdio-hack - Keep STDIO file descriptors in blocking mode.
+dev-lang/crystal:debug - Build each module as a separate object file. Speeds build up.
+dev-lang/crystal:xml - Use the dev-libs/libxml2 library to enable Crystal xml module
+dev-lang/crystal:yaml - Use the dev-libs/libyaml library to enable Crystal yaml module
+dev-lang/erlang:compat-ethread - Enable compatibility with pre-pentium 4 CPUs in the ethread library.
+dev-lang/erlang:dirty-schedulers - Enable dirty schedulers
+dev-lang/erlang:hipe - HIgh Performance Erlang extension
+dev-lang/erlang:kpoll - Enable kernel polling support
+dev-lang/fpc:ide - Build and install the Free Pascal Compiler IDE
+dev-lang/gdl:eigen - Build matrix manipulation with dev-cpp/eigen
+dev-lang/gdl:grib - Add support for the meteorological GRIB format with sci-libs/grib_api
+dev-lang/gdl:gshhs - Add support for projection adn continent maps with sci-geosciences/gshhs-data
+dev-lang/gdl:hdf - Add support for the Hierarchical Data Format v.4
+dev-lang/gdl:proj - Add support for sci-libs/proj (geographic projections)
+dev-lang/gdl:udunits - Add support for manipulating units of physical quantities
+dev-lang/gnat-gpl:awt - Useful only when building GCJ, this enables Abstract Window Toolkit (AWT) peer support on top of GTK+
+dev-lang/gnat-gpl:cilk - Support the Cilk Plus language (C/C++ based languages for parallel programming)
+dev-lang/gnat-gpl:fixed-point - Enable fixed-point arithmetic support for MIPS targets in gcc (Warning: significantly increases compile time!)
+dev-lang/gnat-gpl:go - Build the GCC Go language frontend.
+dev-lang/gnat-gpl:graphite - Add support for the framework for loop optimizations based on a polyhedral intermediate representation
+dev-lang/gnat-gpl:libssp - Build SSP support into a dedicated library rather than use the code in the C library (DO NOT ENABLE THIS IF YOU DON'T KNOW WHAT IT DOES)
+dev-lang/gnat-gpl:mpx - Enable support for Intel Memory Protection Extensions (MPX)
+dev-lang/gnat-gpl:nopie - Disable PIE support (NOT FOR GENERAL USE)
+dev-lang/gnat-gpl:nossp - Disable SSP support (NOT FOR GENERAL USE)
+dev-lang/gnat-gpl:objc - Build support for the Objective C code language
+dev-lang/gnat-gpl:objc++ - Build support for the Objective C++ language
+dev-lang/gnat-gpl:objc-gc - Build support for the Objective C code language Garbage Collector
+dev-lang/gnat-gpl:pgo - Build GCC using Profile Guided Optimization (PGO)
+dev-lang/gnat-gpl:regression-test - Run the testsuite and install the results (requires FEATURES=test)
+dev-lang/gnat-gpl:sanitize - Build support for various sanitizer functions (ASAN/TSAN/etc...)
+dev-lang/gnat-gpl:ssp - Build packages with stack smashing protector on by default
+dev-lang/gnat-gpl:vtv - Build support for virtual table verification (a C++ hardening feature)
+dev-lang/go:gccgo - Enable bootstrapping using gccgo
+dev-lang/icon:iplsrc - install the icon programming library source
+dev-lang/lazarus:minimal - Don't build extra packages from the bigide component
+dev-lang/logtalk:fop - Support for generating pdf documentation using fop
+dev-lang/logtalk:xslt - Support for generating html documentation using xslt
+dev-lang/lua:deprecated - make deprecated data structures/routines available
+dev-lang/luajit:lua52compat - Enable some upwards-compatible features from Lua 5.2 that are unlikely to break existing code.
+dev-lang/mercury:erlang - Support Mercury Erlang grade
+dev-lang/mercury:trail - Support Mercury trail grades
+dev-lang/moarvm:asan - Enable clang's Address Sanitizer functionality. Expect longer compile time.
+dev-lang/moarvm:clang - Use clang compiler instead of GCC
+dev-lang/moarvm:jit - Enable Just-In-Time-Compiler. Has no effect except on AMD64 and Darwin.
+dev-lang/moarvm:optimize - Enable optimization via CFLAGS
+dev-lang/moarvm:ubsan - Enable clang's Undefined Behavior Sanitizer functionality. Expect longer compile time.
+dev-lang/mono:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
+dev-lang/mono:xen - Make mono generate code that is considerably faster on xen VMs but slightly slower on for normal systems.
+dev-lang/nqp:clang - Toggle usage of the clang compiler in conjunction with MoarVM
+dev-lang/nqp:moar - Build the MoarVM backend (experimental/broken)
+dev-lang/orc:pax_kernel - Apply patch needed for pax enabled kernels.
+dev-lang/qu-prolog:pedro - Pedro subscription/notification communications system
+dev-lang/rakudo:clang - Use Clang to compile the MoarVM backend
+dev-lang/rakudo:moar - Use the MoarVM as backend
+dev-lang/rust:cargo - Install cargo component
+dev-lang/rust:extended - Build and install rls, rustfmt and cargo alongside the compiler and stdlib
+dev-lang/rust:jemalloc - Use dev-libs/jemalloc as the standard memory allocator
+dev-lang/rust:rls - Install rls component
+dev-lang/rust:rustfmt - Install rustfmt component
+dev-lang/rust:wasm - Build support for the wasm32-unknown-unknown target
+dev-lang/rust-bin:cargo - Install cargo component
+dev-lang/rust-bin:rustfmt - Install rustfmt component
+dev-lang/spidermonkey:custom-optimization - Build with user-specified compiler optimizations (-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)
+dev-lang/spidermonkey:debug - Enable assertions to allow for easier debugging of programs that link to spidermonkey -- note this will often crash software on regular end-user systems
+dev-lang/spidermonkey:system-icu - Use the system-wide dev-libs/icu instead of bundled -- note, only takes effect when icu flag is enabled
+dev-lang/spidermonkey:threadsafe - Build a threadsafe version of spidermonkey
+dev-lang/swi-prolog:archive - Use libarchive for extension packs
+dev-lang/swi-prolog:uuid - Use ossp-uuid for UUID pack
+dev-lang/swi-prolog:yaml - Use libyaml for YAML pack
+dev-lang/swig:ccache - build ccache-swig(a fast compiler cache)
+dev-lang/yap:R - Enable support for connecting R to Prolog
+dev-lua/luarocks:curl - Uses net-misc/curl for fetching lua packages instead of net-misc/wget.
+dev-lua/luarocks:openssl - Uses dev-libs/openssl for verifying lua packages instead of md5sum.
+dev-lua/luvit:bundled-libs - Use bundled versions of some libraries.
+dev-tcltk/expect-lite:debug - pull in packages needed for runtime interactive debugger
+dev-tcltk/tktreectrl:shellicon - shellicon extension
+net-libs/nodejs:inspector - Enable V8 inspector
+net-libs/nodejs:npm - Enable NPM package manager
+net-libs/nodejs:snapshot - Enable snapshot creation for faster startup
+net-libs/nodejs:systemtap - Enable SystemTAP/DTrace tracing
