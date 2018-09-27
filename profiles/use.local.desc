@@ -120,6 +120,10 @@ dev-lang/mono:xen - Make mono generate code that is considerably faster on xen V
 dev-lang/nqp:clang - Toggle usage of the clang compiler in conjunction with MoarVM
 dev-lang/nqp:moar - Build the MoarVM backend (experimental/broken)
 dev-lang/orc:pax_kernel - Apply patch needed for pax enabled kernels.
+dev-lang/python:bluetooth - Build Bluetooth protocol support in socket module
+dev-lang/python:threads - Enable threading support. (DON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU'RE DOING)
+dev-lang/python:wide-unicode - Enable wide Unicode implementation which uses 4-byte Unicode characters. Switching of this USE flag changes ABI of Python and requires reinstallation of many Python modules. (DON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU'RE DOING)
+dev-lang/python:wininst - Install Windows executables required to create an executable installer for MS Windows.
 dev-lang/qu-prolog:pedro - Pedro subscription/notification communications system
 dev-lang/rakudo:clang - Use Clang to compile the MoarVM backend
 dev-lang/rakudo:moar - Use the MoarVM as backend
@@ -131,10 +135,6 @@ dev-lang/rust:rustfmt - Install rustfmt component
 dev-lang/rust:wasm - Build support for the wasm32-unknown-unknown target
 dev-lang/rust-bin:cargo - Install cargo component
 dev-lang/rust-bin:rustfmt - Install rustfmt component
-dev-lang/spidermonkey:custom-optimization - Build with user-specified compiler optimizations (-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)
-dev-lang/spidermonkey:debug - Enable assertions to allow for easier debugging of programs that link to spidermonkey -- note this will often crash software on regular end-user systems
-dev-lang/spidermonkey:system-icu - Use the system-wide dev-libs/icu instead of bundled -- note, only takes effect when icu flag is enabled
-dev-lang/spidermonkey:threadsafe - Build a threadsafe version of spidermonkey
 dev-lang/swi-prolog:archive - Use libarchive for extension packs
 dev-lang/swi-prolog:uuid - Use ossp-uuid for UUID pack
 dev-lang/swi-prolog:yaml - Use libyaml for YAML pack
@@ -145,7 +145,3 @@ dev-lua/luarocks:openssl - Uses dev-libs/openssl for verifying lua packages inst
 dev-lua/luvit:bundled-libs - Use bundled versions of some libraries.
 dev-tcltk/expect-lite:debug - pull in packages needed for runtime interactive debugger
 dev-tcltk/tktreectrl:shellicon - shellicon extension
-net-libs/nodejs:inspector - Enable V8 inspector
-net-libs/nodejs:npm - Enable NPM package manager
-net-libs/nodejs:snapshot - Enable snapshot creation for faster startup
-net-libs/nodejs:systemtap - Enable SystemTAP/DTrace tracing
