@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile install test unpack
+DEPEND=dev-go/qr:= >=dev-lang/go-1.8
+DESCRIPTION=Two-factor authentication library for Go
+EAPI=6
+HOMEPAGE=https://github.com/gokyle/twofactor
+KEYWORDS=~amd64
+LICENSE=MIT
+SLOT=0/0_p20180418
+SRC_URI=https://github.com/gokyle/twofactor/archive/bbc82ff8de72400ce39a13077627531d9841ad62.tar.gz -> twofactor-0_p20180418.tar.gz
+_eclasses_=golang-base	e3b49d3365185b0b0e29f2713b094420	golang-build	e7df0915974352579de1da5d1f8ad692	golang-vcs-snapshot	f92d5438a012f5e6665f8e7ffb1427a2
+_md5_=2e17f183d63ccb56c5ed617e1728cc6a
