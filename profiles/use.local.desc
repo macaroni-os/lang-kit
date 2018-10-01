@@ -121,10 +121,6 @@ dev-lang/mono:xen - Make mono generate code that is considerably faster on xen V
 dev-lang/nqp:clang - Toggle usage of the clang compiler in conjunction with MoarVM
 dev-lang/nqp:moar - Build the MoarVM backend (experimental/broken)
 dev-lang/orc:pax_kernel - Apply patch needed for pax enabled kernels.
-dev-lang/python:bluetooth - Build Bluetooth protocol support in socket module
-dev-lang/python:threads - Enable threading support. (DON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU'RE DOING)
-dev-lang/python:wide-unicode - Enable wide Unicode implementation which uses 4-byte Unicode characters. Switching of this USE flag changes ABI of Python and requires reinstallation of many Python modules. (DON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU'RE DOING)
-dev-lang/python:wininst - Install Windows executables required to create an executable installer for MS Windows.
 dev-lang/qu-prolog:pedro - Pedro subscription/notification communications system
 dev-lang/rakudo:clang - Use Clang to compile the MoarVM backend
 dev-lang/rakudo:moar - Use the MoarVM as backend
