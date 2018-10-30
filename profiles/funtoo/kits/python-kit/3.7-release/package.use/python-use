@@ -1,5 +1,4 @@
 =dev-tcltk/tclpython-4.1-r4 python_single_target_python2_7
-=dev-tcltk/tclpython-4.1-r6 python_single_target_python2_7
 dev-ada/gnatcoll python_single_target_python2_7
 dev-ada/gnatcoll-bindings python_single_target_python2_7
 dev-ada/gnatcoll-db python_single_target_python2_7
