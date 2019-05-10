@@ -136,7 +136,6 @@ dev-lang/yap:R - Enable support for connecting R to Prolog
 dev-lua/lua-cjson:internal-fpconv - Enable internal number conversion routines, can increase overall performance by up to 50%
 dev-lua/luarocks:curl - Uses net-misc/curl for fetching lua packages instead of net-misc/wget.
 dev-lua/luarocks:openssl - Uses dev-libs/openssl for verifying lua packages instead of md5sum.
-dev-lua/luvit:bundled-libs - Use bundled versions of some libraries.
 dev-tcltk/expect-lite:debug - pull in packages needed for runtime interactive debugger
 dev-tcltk/tcl3d:ode - Enable support for physics engine from dev-games/ode
 dev-tcltk/tcl3d:osg - Enable support for 3D toolkit from dev-games/openscenegraph
