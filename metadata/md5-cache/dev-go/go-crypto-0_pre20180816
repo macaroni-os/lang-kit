@@ -8,5 +8,5 @@ LICENSE=BSD
 RESTRICT=strip
 SLOT=0/0_pre20180816
 SRC_URI=https://github.com/golang/crypto/archive/aabede6cba87e37f413b3e60ebfc214f8eeca1b0.tar.gz -> go-crypto-0_pre20180816.tar.gz
-_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	dc25bafa8fc1305a4de66a0a448472e7	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
+_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=f6b7c192d96a38e5def3cac2ece3065d
