@@ -150,7 +150,6 @@ dev-lang/swi-prolog:uuid - Use ossp-uuid for UUID pack
 dev-lang/swi-prolog:yaml - Use libyaml for YAML pack
 dev-lang/swig:ccache - build ccache-swig(a fast compiler cache)
 dev-lang/yap:R - Enable support for connecting R to Prolog
-dev-lua/lua:deprecated - make deprecated data structures/routines available
 dev-lua/lua-cjson:internal-fpconv - Enable internal number conversion routines, can increase overall performance by up to 50%
 dev-lua/luarocks:curl - Uses net-misc/curl for fetching lua packages instead of net-misc/wget.
 dev-lua/luarocks:openssl - Uses dev-libs/openssl for verifying lua packages instead of md5sum.
