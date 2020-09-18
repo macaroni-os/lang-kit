@@ -1,14 +1,14 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
 
 if [[ ${PV} == "99999999" ]] ; then
 	inherit autotools git-r3
-	EGIT_REPO_URI="git://anongit.gentoo.org/proj/${PN}.git"
+	EGIT_REPO_URI="https://anongit.gentoo.org/git/proj/${PN}.git"
 else
-	SRC_URI="mirror://gentoo/${P}.tar.bz2"
-	KEYWORDS="amd64 arm64 ~ppc64 x86"
+	SRC_URI="https://dev.gentoo.org/~whissi/dist/${PN}/${P}.tar.bz2"
+	KEYWORDS="amd64 arm arm64 ppc64 x86"
 fi
 
 DESCRIPTION="Eselect module for management of multiple Rust versions"
