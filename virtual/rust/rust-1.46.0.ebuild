@@ -1,4 +1,3 @@
-# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,4 +11,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 
 BDEPEND=""
-RDEPEND="|| ( ~dev-lang/rust-${PV}[${MULTILIB_USEDEP}] ~dev-lang/rust-bin-${PV}[${MULTILIB_USEDEP}] )"
+RDEPEND="|| ( ~dev-lang/rust-bin-${PV}[${MULTILIB_USEDEP}] ~dev-lang/rust-${PV}[${MULTILIB_USEDEP}] )"
