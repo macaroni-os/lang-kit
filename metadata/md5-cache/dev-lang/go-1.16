@@ -1,0 +1,11 @@
+BDEPEND=|| ( dev-lang/go dev-lang/go-bootstrap )
+DEFINED_PHASES=compile install test
+DESCRIPTION=A concurrent garbage collected and typesafe programming language
+EAPI=7
+HOMEPAGE=https://golang.org
+LICENSE=BSD
+RESTRICT=strip
+SLOT=0/1.16
+SRC_URI=https://storage.googleapis.com/golang/go1.16.src.tar.gz
+_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
+_md5_=6277365965510602bf7edfea3523ab82
