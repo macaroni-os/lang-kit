@@ -9,5 +9,5 @@ RDEPEND=!<dev-lang/go-1.6 dev-go/go-tools:=
 RESTRICT=strip
 SLOT=0/0_pre20180702
 SRC_URI=https://github.com/golang/lint/archive/06c8688.tar.gz -> golint-0_pre20180702.tar.gz
-_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	xdg-utils	14d00d009167652b1fa363e55effe213
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=e051c6286bf2b9ee708ad7a2bf3c2206

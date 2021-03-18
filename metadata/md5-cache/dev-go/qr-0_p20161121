@@ -8,5 +8,5 @@ LICENSE=MIT
 RESTRICT=strip
 SLOT=0/0_p20161121
 SRC_URI=https://github.com/rsc/qr/archive/48b2ede4844e13f1a2b7ce4d2529c9af7e359fc5.tar.gz -> qr-0_p20161121.tar.gz
-_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	xdg-utils	14d00d009167652b1fa363e55effe213
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-build	2ecd6011551701f98dd49a0341318936	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=7b13fc2418419ea1d778f68343bba3a2

@@ -8,5 +8,5 @@ LICENSE=MIT
 RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/derekparker/delve/archive/v1.0.0.tar.gz -> delve-1.0.0.tar.gz
-_eclasses_=golang-base	c57d2c3f9e1a02d0feb8b87c7b689892	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
+_eclasses_=golang-base	e62ea82a4485a73fb191120f7aad958e	golang-vcs-snapshot	12177e83bede6f7fb87eae383864b40b
 _md5_=5ecb74d0e548178d8be36f87d29a9334
