@@ -1,10 +1,9 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-WX_GTK_VER="3.0"
+EAPI=7
+WX_GTK_VER="3.0-gtk3"
 
-inherit eapi7-ver elisp-common java-pkg-opt-2 systemd wxwidgets
+inherit elisp-common java-pkg-opt-2 user wxwidgets
 
 # NOTE: If you need symlinks for binaries please tell maintainers or
 # open up a bug to let it be created.
@@ -18,14 +17,17 @@ SRC_URI="https://github.com/erlang/otp/archive/OTP-${PV}.tar.gz -> ${P}.tar.gz
 	doc? ( http://erlang.org/download/otp_doc_html_${UPSTREAM_V}.tar.gz -> ${PN}_doc_html_${UPSTREAM_V}.tar.gz )"
 
 LICENSE="Apache-2.0"
-SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris"
-IUSE="doc emacs +hipe java +kpoll libressl odbc sctp ssl systemd tk wxwidgets"
+# We use this subslot because Compiled HiPE Code can be loaded on the exact
+# same build of ERTS that was used when compiling the code.  See
+# http://erlang.org/doc/system_principles/misc.html for more information.
+SLOT="0/${PV}"
+KEYWORDS="*"
+IUSE="doc emacs +hipe java +kpoll libressl odbc sctp ssl wxwidgets"
 
 RDEPEND="
 	sys-libs/ncurses:0
 	sys-libs/zlib
-	emacs? ( virtual/emacs )
+	emacs? ( >=app-editors/emacs-23.1:* )
 	java? ( >=virtual/jdk-1.8:* )
 	odbc? ( dev-db/unixODBC )
 	sctp? ( net-misc/lksctp-tools )
@@ -33,8 +35,6 @@ RDEPEND="
 		!libressl? ( >=dev-libs/openssl-0.9.7d:0= )
 		libressl? ( dev-libs/libressl:0= )
 	)
-	systemd? ( sys-apps/systemd )
-	tk? ( dev-lang/tk:0 )
 	wxwidgets? ( x11-libs/wxGTK:${WX_GTK_VER}[X,opengl] )
 "
 DEPEND="${RDEPEND}
@@ -44,9 +44,8 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/otp-OTP-${PV}"
 
 PATCHES=(
-	"${FILESDIR}/18.2.1-wx3.0.patch"
-	"${FILESDIR}/${PN}-22.0-dont-ignore-LDFLAGS.patch"
-	"${FILESDIR}/${PN}-add-epmd-pid-file-creation-for-openrc.patch"
+	"${FILESDIR}"/18.2.1-wx3.0.patch
+	"${FILESDIR}"/${PN}-22.0-dont-ignore-LDFLAGS.patch
 )
 
 SITEFILE=50"${PN}"-gentoo.el
@@ -54,7 +53,7 @@ SITEFILE=50"${PN}"-gentoo.el
 src_prepare() {
 	default
 
-	./otp_build autoconf
+	./otp_build autoconf || die
 }
 
 src_configure() {
@@ -102,7 +101,13 @@ src_install() {
 	emake INSTALL_PREFIX="${D}" install
 
 	if use doc ; then
-		local DOCS=( "AUTHORS" "HOWTO"/* "README.md" "CONTRIBUTING.md" "${WORKDIR}"/doc/. "${WORKDIR}"/lib/. "${WORKDIR}"/erts-* )
+		# Note: we explicitly install docs into:
+		#     /usr/share/doc/${PF}/{doc,lib,erts-*}
+		# To maintain that layout we gather everything in 'html-docs'.
+		# See bug #684376.
+		mkdir html-docs || die
+		mv "${WORKDIR}"/doc "${WORKDIR}"/lib "${WORKDIR}"/erts-* html-docs/ || die
+		local DOCS=( "AUTHORS" "HOWTO"/* "README.md" "CONTRIBUTING.md" html-docs/. )
 		docompress -x /usr/share/doc/${PF}
 	else
 		local DOCS=("README.md")
@@ -134,8 +139,8 @@ src_install() {
 		elisp-site-file-install "${T}/${SITEFILE}"
 	fi
 
-	newinitd "${FILESDIR}"/epmd.init epmd
-	use systemd && systemd_dounit "${FILESDIR}"/epmd.service
+	newinitd "${FILESDIR}"/epmd.init-r2 epmd
+	newconfd "${FILESDIR}"/epmd.confd-r2 epmd
 }
 
 pkg_postinst() {
@@ -144,4 +149,9 @@ pkg_postinst() {
 
 pkg_postrm() {
 	use emacs && elisp-site-regen
+}
+
+pkg_preinst() {
+	enewgroup epmd 335
+	enewuser epmd 335 -1 /dev/null epmd
 }
