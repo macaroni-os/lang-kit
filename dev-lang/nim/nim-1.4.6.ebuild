@@ -1,18 +1,17 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit bash-completion-r1 multiprocessing
+inherit bash-completion-r1 multiprocessing toolchain-funcs
 
 DESCRIPTION="compiled, garbage-collected systems programming language"
 HOMEPAGE="https://nim-lang.org/"
-SRC_URI="https://nim-lang.org/download/${P}.tar.xz"
+SRC_URI="https://nim-lang.org/download/nim-1.4.6.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86"
-IUSE="doc +readline test"
+KEYWORDS="*"
+IUSE="+readline test"
 
 RESTRICT=test # need to sort out depends and numerous failures
 
@@ -25,7 +24,7 @@ DEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-0.19.0-paths.patch
+	"${FILESDIR}"/${PN}-0.20.0-paths.patch
 )
 
 _run() {
@@ -38,29 +37,33 @@ nim_use_enable() {
 	use $1 && echo "-d:$2"
 }
 
-src_compile() {
+src_configure() {
 	export XDG_CACHE_HOME=${T}/cache #667182
+	tc-export CC LD
+
+	# Override default CC=gcc.
+	echo "gcc.exe            = \"$(tc-getCC)\"" >> config/nim.cfg || die
+	echo "gcc.linkerexe      = \"$(tc-getCC)\"" >> config/nim.cfg || die
+	echo "gcc.cpp.exe        = \"$(tc-getCXX)\"" >> config/nim.cfg || die
+	echo "gcc.cpp.linkerexe  = \"$(tc-getCXX)\"" >> config/nim.cfg || die
+}
+
+src_compile() {
 
 	_run ./build.sh
 
 	_run ./bin/nim --parallelBuild:$(makeopts_jobs) c koch
 	_run ./koch boot --parallelBuild:$(makeopts_jobs) -d:release $(nim_use_enable readline useGnuReadline)
-	# build nimble and friends
-	# --stable to avoid pulling HEAD nimble
-	PATH="./bin:$PATH" _run ./koch --stable tools
-
-	if use doc; then
-		PATH="./bin:$PATH" _run ./koch doc
-	fi
+	PATH="./bin:$PATH" _run ./koch tools --parallelBuild:$(makeopts_jobs)
 }
 
 src_test() {
-	PATH="./bin:$PATH" _run ./koch test
+	PATH="./bin:$PATH" _run ./koch test --parallelBuild:$(makeopts_jobs)
 }
 
 src_install() {
-	PATH="./bin:$PATH" _run ./koch install "${ED%/}"
-	rm -r "${ED%/}/usr/share/nim/doc" || die "failed to remove 'doc'"
+	PATH="./bin:$PATH" _run ./koch install "${ED}"
+	rm -r "${ED}/usr/share/nim/doc" || die "failed to remove 'doc'"
 
 	exeinto /usr/bin
 
@@ -71,11 +74,6 @@ src_install() {
 		[[ ${bin_exe} == bin/nim ]] && continue
 		doexe "${bin_exe}"
 	done
-
-	if use doc; then
-		insinto /usr/share/doc/${PF}
-		dodoc doc/html/*.html
-	fi
 
 	newbashcomp tools/nim.bash-completion ${PN}
 }
