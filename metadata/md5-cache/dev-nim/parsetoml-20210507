@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=>=dev-lang/nim-0.18.0
+DESCRIPTION=A Nim library to parse TOML files
+EAPI=7
+HOMEPAGE=https://github.com/NimParsers/parsetoml
+KEYWORDS=*
+LICENSE=MIT
+RDEPEND=>=dev-lang/nim-0.18.0
+SLOT=0
+SRC_URI=https://github.com/NimParsers/parsetoml/archive/376086763a5327478d44a0d61c774d2352668b0c.tar.gz -> parsetoml-20210507.tar.gz
+_md5_=00550056767165773168ef241577c919
