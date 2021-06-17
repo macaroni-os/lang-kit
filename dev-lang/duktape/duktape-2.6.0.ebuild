@@ -1,25 +1,28 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
+
+inherit toolchain-funcs
 
 DESCRIPTION="Embeddable Javascript engine"
 HOMEPAGE="https://duktape.org"
-SRC_URI="https://duktape.org/${P}.tar.xz"
+SRC_URI="https://github.com/svaarala/duktape/releases/download/v2.6.0/duktape-2.6.0.tar.xz"
 
 LICENSE="MIT"
-SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
+# Upstream don't maintain binary compatibility
+# https://github.com/svaarala/duktape/issues/1524
+SLOT="0/${PV}"
+KEYWORDS="*"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+PATCHES=(
+	"${FILESDIR}/${PN}-2.6.0-respect-tc-env.patch"
+)
 
 src_prepare() {
-	eapply_user
+	default
 
 	# Set install path
-	sed -i "s#INSTALL_PREFIX=/usr/local#INSTALL_PREFIX=${D::-1}/usr#" \
+	sed -i "s#INSTALL_PREFIX = /usr/local#INSTALL_PREFIX = ${ED}/usr#" \
 			Makefile.sharedlibrary || die "failed to set install path"
 
 	# Edit pkgconfig
@@ -31,6 +34,10 @@ src_prepare() {
 		Makefile.sharedlibrary || die
 
 	mv Makefile.sharedlibrary Makefile || die "failed to rename makefile"
+}
+
+src_compile() {
+	emake CC="$(tc-getCC)"
 }
 
 src_install() {
