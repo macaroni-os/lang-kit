@@ -9,38 +9,39 @@ MY_P="rust-${PV}"
 DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
-    	abi_x86_64? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-x86_64-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-x86_64-unknown-linux-gnu.tar.xz
+		abi_x86_64? ( 
+		https://static.rust-lang.org/dist/rust-1.55.0-x86_64-unknown-linux-gnu.tar.xz
 	)
 	arm? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-arm-unknown-linux-gnueabi.tar.xz -> rust-bin-1.55.0-arm-unknown-linux-gnueabi.tar.xz
-		https://static.rust-lang.org/dist/rust-1.55.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-bin-1.55.0-arm-unknown-linux-gnueabihf.tar.xz
-		https://static.rust-lang.org/dist/rust-1.55.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-bin-1.55.0-armv7-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-armv7-unknown-linux-gnueabihf.tar.xz
 	)
 	arm64? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-aarch64-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-aarch64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-aarch64-unknown-linux-gnu.tar.xz
 	)
 	mips? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-mips64-unknown-linux-gnuabi64.tar.xz -> rust-bin-1.55.0-mips64-unknown-linux-gnuabi64.tar.xz
-		https://static.rust-lang.org/dist/rust-1.55.0-mipsel-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-mipsel-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.55.0-mips-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-mips-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-mips64-unknown-linux-gnuabi64.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-mipsel-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-mips-unknown-linux-gnu.tar.xz
 	)
 	ppc? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-powerpc-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-powerpc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-powerpc-unknown-linux-gnu.tar.xz
 	)
 	ppc64? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-powerpc64le-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-powerpc64le-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.55.0-powerpc64-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-powerpc64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-powerpc64le-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-powerpc64-unknown-linux-gnu.tar.xz
 	)
 	s390? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-s390x-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-s390x-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-s390x-unknown-linux-gnu.tar.xz
 	)
 	abi_x86_32? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-i686-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-i686-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-i686-unknown-linux-gnu.tar.xz
 	)
 	riscv64? ( 
-		https://static.rust-lang.org/dist/rust-1.55.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-bin-1.55.0-riscv64gc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.55.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
+	rls? ( https://static.rust-lang.org/dist/rust-src-1.55.0.tar.xz )
 "
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
@@ -92,7 +93,16 @@ pkg_pretend() {
 
 src_unpack() {
 	default
+
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
+
+	use rls && mv "${WORKDIR}/rust-src-${PV}/rust-src" "${S}"/src
+}
+
+src_prepare() {
+	default
+
+	use rls && echo src >> components
 }
 
 patchelf_for_bin() {
@@ -116,7 +126,7 @@ multilib_src_install() {
 	local components="rustc,cargo,${std}"
 	use doc && components="${components},rust-docs"
 	use clippy && components="${components},clippy-preview"
-	use rls && components="${components},rls-preview,${analysis}"
+	use rls && components="${components},rls-preview,${analysis},src"
 	use rustfmt && components="${components},rustfmt-preview"
 	./install.sh \
 		--components="${components}" \
