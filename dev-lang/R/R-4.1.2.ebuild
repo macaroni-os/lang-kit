@@ -11,7 +11,7 @@ DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="https://www.r-project.org/"
 SRC_URI="
     https://cran.r-project.org/src/base/R-4/R-4.1.2.tar.gz
-	https://raw.githubusercontent.com/deepayan/rcompletion/${BCPV}/bash_completion/R -> ${PN}-${BCPV}.bash_completion"
+    https://github.com/deepayan/rcompletion/archive/78d6830e28ea90a046da79a9b4f70c39594bb6d6.tar.gz -> rcompletion-78d6830e28ea90a046da79a9b4f70c39594bb6d6.tar.gz"
 
 LICENSE="|| ( GPL-2 GPL-3 ) LGPL-2.1"
 SLOT="0"
@@ -68,7 +68,6 @@ PATCHES=(
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
 }
-
 
 pkg_setup() {
 	if [[ ${MERGE_TYPE} != binary ]] && use openmp; then
@@ -179,7 +178,8 @@ src_install() {
 		R_HOME=${EROOT}/usr/$(get_libdir)/${PN}
 	EOF
 	doenvd 99R
-	newbashcomp "${DISTDIR}"/${PN}-${BCPV}.bash_completion ${PN}
+
+    newbashcomp "${WORKDIR}/rcompletion-${BCPV}/bash_completion/R" ${PN}
 	# The buildsystem has a different understanding of install_names than
 	# we require.  Since it builds modules like shared objects (wrong), many
 	# objects (all modules) get an incorrect install_name.  Fixing the build
