@@ -10,5 +10,5 @@ RDEPEND=dev-ada/gnatcoll-core[gnat_2016(-)?,gnat_2017(-)?,gnat_2018(-)?,gnat_201
 REQUIRED_USE=gnatinspect? ( xref ) xref? ( sqlite ) sqlite? ( sql ) gnatcoll_db2ada? ( sql ) ^^ ( gnat_2016 gnat_2017 gnat_2018 gnat_2019 )
 SLOT=0
 SRC_URI=http://mirrors.cdn.adacore.com/art/5b0ce9cbc7a4475263382be6 -> gnatcoll-db-gpl-2018-src.tar.gz
-_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	efd97a92138dbafd1f176308612d28c9	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	8b6048ab112e99353b21b318b9074eb6	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=1f41714346a77e8a1017dd5f1ca1dbe9

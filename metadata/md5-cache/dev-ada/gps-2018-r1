@@ -10,5 +10,5 @@ RDEPEND=python_single_target_python2_7? ( >=dev-lang/python-2.7.5-r2:2.7 >=dev-l
 RESTRICT=test
 SLOT=0
 SRC_URI=http://mirrors.cdn.adacore.com/art/5b0cf627c7a4475261f97ceb -> gps-gpl-2018-src.tar.gz http://mirrors.cdn.adacore.com/art/5b0819dfc7a447df26c27a59 -> libadalang-tools-gpl-2018-src.tar.gz http://mirrors.cdn.adacore.com/art/5b0819dfc7a447df26c27a61 -> gtk+-3.14.15-src.tar.gz
-_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	desktop	b1d22ac8bdd4679ab79c71aca235009d	libtool	f143db5a74ccd9ca28c1234deffede96	llvm	21d8c0949a2693d7109cc6a25fabfcaf	multilib	d410501a125f99ffb560b0c523cd3d1e	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	efd97a92138dbafd1f176308612d28c9	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	desktop	b1d22ac8bdd4679ab79c71aca235009d	libtool	f143db5a74ccd9ca28c1234deffede96	llvm	21d8c0949a2693d7109cc6a25fabfcaf	multilib	d410501a125f99ffb560b0c523cd3d1e	python-single-r1	ce99dfba1cad0514af51a32b2b6964af	python-utils-r1	8b6048ab112e99353b21b318b9074eb6	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=02f2598d20cea76b9f2c23a21ecfaa20
