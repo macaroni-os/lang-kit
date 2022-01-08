@@ -11,4 +11,4 @@ RESTRICT=strip
 SLOT=0/1.16.12
 SRC_URI=https://storage.googleapis.com/golang/go1.16.12.src.tar.gz
 _eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=db148be5976abd5e0d2f405db30d46d8
+_md5_=4231d58a880ef119c624d1cdb50c3d66
