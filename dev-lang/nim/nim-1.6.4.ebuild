@@ -6,7 +6,7 @@ inherit bash-completion-r1 multiprocessing toolchain-funcs
 
 DESCRIPTION="compiled, garbage-collected systems programming language"
 HOMEPAGE="https://nim-lang.org/"
-SRC_URI="https://nim-lang.org/download/nim-1.6.2.tar.xz"
+SRC_URI="https://nim-lang.org/download/nim-1.6.4.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
