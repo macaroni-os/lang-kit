@@ -3,9 +3,9 @@
 EAPI=6
 
 DESCRIPTION="General-purpose programming language for robust, optimal, and reusable software"
-SRC_URI="${SRC_URI}
-    ? ( https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.717+90f2a8d9c.tar.xz )
-    ? ( https://ziglang.org/builds/zig-linux-aarch64-0.10.0-dev.717+90f2a8d9c.tar.xz )"
+SRC_URI="
+	amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.722+b85c0d6a4.tar.xz )
+	arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.10.0-dev.722+b85c0d6a4.tar.xz )"
 HOMEPAGE="https://ziglang.org/"
 SLOT="0"
 LICENSE="MIT"
@@ -16,7 +16,7 @@ DEPEND="app-arch/tar"
 src_unpack() {
 	unpack ${A}
 
-	mv "${WORKDIR}/"* "${WORKDIR}/${PN}-${PV}"
+	mv "${WORKDIR}/"* "${S}"
 }
 
 src_install() {

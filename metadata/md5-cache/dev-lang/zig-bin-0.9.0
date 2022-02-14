@@ -7,5 +7,5 @@ IUSE=+doc
 KEYWORDS=*
 LICENSE=MIT
 SLOT=0
-SRC_URI=? ( https://ziglang.org/download/0.9.0/zig-linux-aarch64-0.9.0.tar.xz ) ? ( https://ziglang.org/download/0.9.0/zig-linux-armv7a-0.9.0.tar.xz ) ? ( https://ziglang.org/download/0.9.0/zig-linux-i386-0.9.0.tar.xz ) ? ( https://ziglang.org/download/0.9.0/zig-linux-riscv64-0.9.0.tar.xz ) ? ( https://ziglang.org/download/0.9.0/zig-linux-x86_64-0.9.0.tar.xz )
-_md5_=84ab9a1053a814d11b71194500e15c14
+SRC_URI=arm64? ( https://ziglang.org/download/0.9.0/zig-linux-aarch64-0.9.0.tar.xz ) arm? ( https://ziglang.org/download/0.9.0/zig-linux-armv7a-0.9.0.tar.xz ) x86? ( https://ziglang.org/download/0.9.0/zig-linux-i386-0.9.0.tar.xz ) riscv64? ( https://ziglang.org/download/0.9.0/zig-linux-riscv64-0.9.0.tar.xz ) amd64? ( https://ziglang.org/download/0.9.0/zig-linux-x86_64-0.9.0.tar.xz )
+_md5_=e9010f3b8b9393985ccb290ff0182d16

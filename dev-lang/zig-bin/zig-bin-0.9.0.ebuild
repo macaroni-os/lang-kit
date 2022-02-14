@@ -3,12 +3,12 @@
 EAPI=6
 
 DESCRIPTION="General-purpose programming language for robust, optimal, and reusable software"
-SRC_URI="${SRC_URI}
-    ? ( https://ziglang.org/download/0.9.0/zig-linux-aarch64-0.9.0.tar.xz )
-    ? ( https://ziglang.org/download/0.9.0/zig-linux-armv7a-0.9.0.tar.xz )
-    ? ( https://ziglang.org/download/0.9.0/zig-linux-i386-0.9.0.tar.xz )
-    ? ( https://ziglang.org/download/0.9.0/zig-linux-riscv64-0.9.0.tar.xz )
-    ? ( https://ziglang.org/download/0.9.0/zig-linux-x86_64-0.9.0.tar.xz )"
+SRC_URI="
+	arm64? ( https://ziglang.org/download/0.9.0/zig-linux-aarch64-0.9.0.tar.xz )
+	arm? ( https://ziglang.org/download/0.9.0/zig-linux-armv7a-0.9.0.tar.xz )
+	x86? ( https://ziglang.org/download/0.9.0/zig-linux-i386-0.9.0.tar.xz )
+	riscv64? ( https://ziglang.org/download/0.9.0/zig-linux-riscv64-0.9.0.tar.xz )
+	amd64? ( https://ziglang.org/download/0.9.0/zig-linux-x86_64-0.9.0.tar.xz )"
 HOMEPAGE="https://ziglang.org/"
 KEYWORDS="*"
 SLOT="0"
@@ -20,7 +20,7 @@ DEPEND="app-arch/tar"
 src_unpack() {
 	unpack ${A}
 
-	mv "${WORKDIR}/"* "${WORKDIR}/${PN}-${PV}"
+	mv "${WORKDIR}/"* "${S}"
 }
 
 src_install() {
