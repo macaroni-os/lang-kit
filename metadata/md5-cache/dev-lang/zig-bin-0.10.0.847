@@ -1,0 +1,10 @@
+DEFINED_PHASES=install unpack
+DEPEND=app-arch/tar
+DESCRIPTION=General-purpose programming language for robust, optimal, and reusable software
+EAPI=6
+HOMEPAGE=https://ziglang.org/
+IUSE=+doc
+LICENSE=MIT
+SLOT=0
+SRC_URI=amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.847+2e1c16d64.tar.xz ) arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.10.0-dev.847+2e1c16d64.tar.xz )
+_md5_=158b7a9c894eef4c38e26aecc7f33cda
