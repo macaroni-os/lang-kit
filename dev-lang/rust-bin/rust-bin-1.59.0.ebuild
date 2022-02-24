@@ -10,38 +10,38 @@ DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
 		abi_x86_64? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-x86_64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-x86_64-unknown-linux-gnu.tar.xz
 	)
 	arm? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-arm-unknown-linux-gnueabi.tar.xz
-		https://static.rust-lang.org/dist/rust-1.58.1-arm-unknown-linux-gnueabihf.tar.xz
-		https://static.rust-lang.org/dist/rust-1.58.1-armv7-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-armv7-unknown-linux-gnueabihf.tar.xz
 	)
 	arm64? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-aarch64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-aarch64-unknown-linux-gnu.tar.xz
 	)
 	mips? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-mips64-unknown-linux-gnuabi64.tar.xz
-		https://static.rust-lang.org/dist/rust-1.58.1-mipsel-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.58.1-mips-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-mips64-unknown-linux-gnuabi64.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-mipsel-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-mips-unknown-linux-gnu.tar.xz
 	)
 	ppc? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-powerpc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-powerpc-unknown-linux-gnu.tar.xz
 	)
 	ppc64? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-powerpc64le-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.58.1-powerpc64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-powerpc64le-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-powerpc64-unknown-linux-gnu.tar.xz
 	)
 	s390? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-s390x-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-s390x-unknown-linux-gnu.tar.xz
 	)
 	abi_x86_32? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-i686-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-i686-unknown-linux-gnu.tar.xz
 	)
 	riscv64? ( 
-		https://static.rust-lang.org/dist/rust-1.58.1-riscv64gc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.59.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
-	rls? ( https://static.rust-lang.org/dist/rust-src-1.58.1.tar.xz )
+	rls? ( https://static.rust-lang.org/dist/rust-src-1.59.0.tar.xz )
 "
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
