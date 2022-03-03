@@ -16,6 +16,7 @@ LICENSE="MIT"
 IUSE="+doc"
 
 DEPEND="app-arch/tar"
+RDEPEND="!dev-lang/zig"
 
 src_unpack() {
 	unpack ${A}
