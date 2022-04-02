@@ -7,7 +7,7 @@ inherit cmake llvm
 
 DESCRIPTION=""
 HOMEPAGE="https://ziglang.org/"
-SRC_URI="https://ziglang.org/builds/zig-0.10.0-dev.1699+8b5d5f44e.tar.xz"
+SRC_URI="https://ziglang.org/builds/zig-0.10.0-dev.1706+3ee44ce94.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
