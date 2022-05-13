@@ -7,5 +7,5 @@ IUSE=+doc
 LICENSE=MIT
 RDEPEND=!dev-lang/zig
 SLOT=0
-SRC_URI=arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.10.0-dev.2186+3a64693db.tar.xz ) amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.2186+3a64693db.tar.xz )
-_md5_=9f1229eae0f41eccf1d54a8f3e3b8cb5
+SRC_URI=amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.2205+537f90521.tar.xz ) arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.10.0-dev.2205+537f90521.tar.xz )
+_md5_=4ee44b09cf407ed2886c199cc68a8caa
