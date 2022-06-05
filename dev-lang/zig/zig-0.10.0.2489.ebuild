@@ -7,7 +7,7 @@ inherit cmake llvm
 
 DESCRIPTION=""
 HOMEPAGE="https://ziglang.org/"
-SRC_URI="https://ziglang.org/builds/zig-0.10.0-dev.2473+e498fb155.tar.xz"
+SRC_URI="https://ziglang.org/builds/zig-0.10.0-dev.2489+33826a6a2.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -40,7 +40,7 @@ llvm_check_deps() {
 
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
-		mv -* "${S}" || die
+		mv "${WORKDIR}"/* "${S}" || die
 	fi
 }
 
