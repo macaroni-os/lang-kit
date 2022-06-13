@@ -41,13 +41,18 @@ SRC_URI="
 	riscv64? ( 
 		https://static.rust-lang.org/dist/rust-1.61.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
-	rls? ( https://static.rust-lang.org/dist/rust-src-1.61.0.tar.xz )
+	rls? (
+		https://static.rust-lang.org/dist/rust-src-1.61.0.tar.xz
+	)
+	wasm? (
+		https://static.rust-lang.org/dist/rust-std-1.61.0-wasm32-unknown-unknown.tar.xz
+	)
 "
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 SLOT="stable"
 KEYWORDS="*"
-IUSE="clippy cpu_flags_x86_sse2 doc prefix rls rustfmt"
+IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rls wasm"
 
 DEPEND=""
 RDEPEND="app-eselect/eselect-rust"
@@ -95,14 +100,22 @@ src_unpack() {
 	default
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
-
-	use rls && mv "${WORKDIR}/rust-src-${PV}/rust-src" "${S}"/src
+		if use rls; then
+				mv "${WORKDIR}/rust-src-1.61.0/rust-src" "${S}"/rust-src
+		fi
+		if use wasm; then
+				mv "${WORKDIR}/rust-std-1.61.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
+		fi
 }
 
 src_prepare() {
 	default
-
-	use rls && echo src >> components
+		if use rls; then
+				echo "rust-src" >> components
+		fi
+		if use wasm; then
+				echo "rust-std-wasm32-unknown-unknown" >> components
+		fi
 }
 
 patchelf_for_bin() {
@@ -121,13 +134,16 @@ multilib_src_install() {
 	# start native abi install
 	pushd "${S}" >/dev/null || die
 	local analysis std
-	analysis="$(grep 'analysis' ./components)"
-	std="$(grep 'std' ./components)"
+	analysis="$(grep -m 1 'analysis' ./components)"
+	std="$(grep -m 1 'std' ./components)"
 	local components="rustc,cargo,${std}"
 	use doc && components="${components},rust-docs"
 	use clippy && components="${components},clippy-preview"
-	use rls && components="${components},rls-preview,${analysis},src"
+	use rls && components="${components},rls-preview,${analysis}"
 	use rustfmt && components="${components},rustfmt-preview"
+		use rls && components="${components},rust-src"
+		use wasm && components="${components},rust-std-wasm32-unknown-unknown"
+
 	./install.sh \
 		--components="${components}" \
 		--disable-verify \
