@@ -6,7 +6,7 @@ inherit eutils ltprune
 
 DESCRIPTION="Library for using System.Drawing with Mono"
 HOMEPAGE="https://www.mono-project.com"
-SRC_URI="https://download.mono-project.com/sources/libgdiplus/libgdiplus-6.0.5.tar.gz"
+SRC_URI="https://download.mono-project.com/sources/libgdiplus/libgdiplus-6.0.5.tar.gz -> libgdiplus-6.0.5.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
