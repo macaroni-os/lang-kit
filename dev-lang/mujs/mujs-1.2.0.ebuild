@@ -6,7 +6,7 @@ inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="An embeddable Javascript interpreter in C."
 HOMEPAGE="https://mujs.com/"
-SRC_URI="https://mujs.com/downloads/mujs-1.2.0.tar.xz"
+SRC_URI="https://mujs.com/downloads/mujs-1.2.0.tar.xz -> mujs-1.2.0.tar.xz"
 
 LICENSE="ISC"
 # subslot matches SONAME

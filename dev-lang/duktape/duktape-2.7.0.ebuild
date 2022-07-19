@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Embeddable Javascript engine"
 HOMEPAGE="https://duktape.org"
-SRC_URI="https://github.com/svaarala/duktape/releases/download/v2.7.0/duktape-2.7.0.tar.xz"
+SRC_URI="https://github.com/svaarala/duktape/releases/download/v2.7.0/duktape-2.7.0.tar.xz -> duktape-2.7.0.tar.xz"
 
 LICENSE="MIT"
 # Upstream don't maintain binary compatibility
