@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Bootstrap package for dev-lang/go
+EAPI=7
+HOMEPAGE=https://golang.org
+IUSE=big-endian
+KEYWORDS=-* amd64 arm arm64 ppc64 riscv
+LICENSE=BSD
+RESTRICT=strip
+SLOT=0
+SRC_URI=amd64? ( https://dev.gentoo.org/~williamh/dist/go-linux-amd64-bootstrap-1.16.6.tbz ) arm? ( https://dev.gentoo.org/~williamh/dist/go-linux-arm-bootstrap-1.16.6.tbz ) arm64? ( https://dev.gentoo.org/~williamh/dist/go-linux-arm64-bootstrap-1.16.6.tbz ) ppc64? ( big-endian? ( https://dev.gentoo.org/~williamh/dist/go-linux-ppc64-bootstrap-1.16.6.tbz ) !big-endian? ( https://dev.gentoo.org/~williamh/dist/go-linux-ppc64le-bootstrap-1.16.6.tbz ) ) riscv? ( https://dev.gentoo.org/~williamh/dist/go-linux-riscv64-bootstrap-1.16.6.tbz )
+_md5_=6056b1b95486d74f98c0af2a926050c3
