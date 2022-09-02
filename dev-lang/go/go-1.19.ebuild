@@ -11,7 +11,7 @@ inherit toolchain-funcs
 
 SRC_URI="https://storage.googleapis.com/golang/go${MY_PV}.src.tar.gz "
 S="${WORKDIR}"/go
-KEYWORDS=""
+KEYWORDS="*"
 
 DESCRIPTION="A concurrent garbage collected and typesafe programming language"
 HOMEPAGE="https://golang.org"
