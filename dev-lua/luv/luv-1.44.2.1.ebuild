@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/luvit/luv"
 
 LUA_COMPAT_PV="0.9"
 SRC_URI="
-	https://github.com/luvit/luv/releases/download/1.44.2-0/luv-1.44.2-0.tar.gz -> luv-1.44.2.0.tar.gz
+	https://github.com/luvit/luv/releases/download/1.44.2-1/luv-1.44.2-1.tar.gz -> luv-1.44.2.1.tar.gz
 	https://github.com/keplerproject/lua-compat-5.3/archive/v0.9.tar.gz -> luv-lua-compat-0.9.tar.gz
 "
 
