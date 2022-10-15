@@ -54,8 +54,8 @@ SLOT="stable"
 KEYWORDS="*"
 IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rls wasm"
 
-DEPEND=""
-RDEPEND="app-eselect/eselect-rust"
+DEPEND="app-eselect/eselect-rust"
+RDEPEND=""
 BDEPEND="
 	prefix? ( dev-util/patchelf )
 "
