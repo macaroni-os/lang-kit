@@ -7,5 +7,5 @@ KEYWORDS=*
 LICENSE=MIT
 RDEPEND=>=dev-lang/nim-0.18.0
 SLOT=0
-SRC_URI=https://github.com/NimParsers/parsetoml/archive/609e03e0a7d69d25330786f2cac034c8dd265ed5.tar.gz -> parsetoml-20220405.tar.gz
-_md5_=428ae8d7ee267390d8c7eedd69ab00b7
+SRC_URI=https://github.com/NimParsers/parsetoml/archive/bb903611e91584efd03b7327493ade0859eeddea.tar.gz -> parsetoml-20221024.tar.gz
+_md5_=4b47b6cd3df16f4158dd4bffff4ed965
