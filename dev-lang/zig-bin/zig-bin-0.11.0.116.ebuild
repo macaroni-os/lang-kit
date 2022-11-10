@@ -4,7 +4,7 @@ EAPI=6
 
 DESCRIPTION="General-purpose programming language for robust, optimal, and reusable software"
 SRC_URI="
-	amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.109+a2e67173d.tar.xz -> zig-linux-x86_64-0.11.0-dev.109+a2e67173d.tar.xz )"
+	amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.116+41b7e40d7.tar.xz -> zig-linux-x86_64-0.11.0-dev.116+41b7e40d7.tar.xz )"
 HOMEPAGE="https://ziglang.org/"
 SLOT="0"
 LICENSE="MIT"
