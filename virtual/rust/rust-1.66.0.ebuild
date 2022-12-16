@@ -8,7 +8,7 @@ DESCRIPTION="Virtual for Rust language compiler"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="-* riscv64"
+KEYWORDS="*"
 
 BDEPEND=""
-RDEPEND="|| ( ~dev-lang/rust-${PV}[${MULTILIB_USEDEP}] )"
+RDEPEND="|| ( ~dev-lang/rust-bin-1.66.0[${MULTILIB_USEDEP}] ~dev-lang/rust-1.66.0[${MULTILIB_USEDEP}] )"
