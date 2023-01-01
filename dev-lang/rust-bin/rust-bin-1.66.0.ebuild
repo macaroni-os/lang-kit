@@ -41,7 +41,7 @@ SRC_URI="
 	riscv64? ( 
 		https://static.rust-lang.org/dist/rust-1.66.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.66.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
-	rls? (
+	rust-src? (
 		https://static.rust-lang.org/dist/rust-src-1.66.0.tar.xz -> rust-src-1.66.0.tar.xz
 	)
 	wasm? (
@@ -52,7 +52,7 @@ SRC_URI="
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 SLOT="stable"
 KEYWORDS="*"
-IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rls wasm"
+IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm"
 
 DEPEND="app-eselect/eselect-rust"
 RDEPEND=""
@@ -69,6 +69,11 @@ QA_PREBUILT="
 	opt/${P}/lib/rustlib/.*/bin/.*
 	opt/${P}/lib/rustlib/.*/lib/.*
 "
+
+# A rmeta file is custom binary format that contains the metadata for the crate.
+# Rmeta files do not support linking, since they do not contain compiled object files.
+# So we can safely silence the warning for this QA check.
+QA_EXECSTACK="opt/${P}/lib/rustlib/*/lib*.rlib:lib.rmeta"
 
 rust_abi() {
 	local CTARGET=${1:-${CHOST}}
@@ -100,7 +105,7 @@ src_unpack() {
 	default
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
-		if use rls; then
+		if use rust-src; then
 				mv "${WORKDIR}/rust-src-1.66.0/rust-src" "${S}"/rust-src
 		fi
 		if use wasm; then
@@ -110,7 +115,7 @@ src_unpack() {
 
 src_prepare() {
 	default
-		if use rls; then
+		if use rust-src; then
 				echo "rust-src" >> components
 		fi
 		if use wasm; then
@@ -139,9 +144,8 @@ multilib_src_install() {
 	local components="rustc,cargo,${std}"
 	use doc && components="${components},rust-docs"
 	use clippy && components="${components},clippy-preview"
-	use rls && components="${components},rls-preview,${analysis}"
 	use rustfmt && components="${components},rustfmt-preview"
-		use rls && components="${components},rust-src"
+		use rust-src && components="${components},rust-src"
 		use wasm && components="${components},rust-std-wasm32-unknown-unknown"
 
 	./install.sh \
@@ -172,7 +176,6 @@ multilib_src_install() {
 	)
 
 	use clippy && symlinks+=( clippy-driver cargo-clippy )
-	use rls && symlinks+=( rls )
 	use rustfmt && symlinks+=( rustfmt cargo-fmt )
 
 	einfo "installing eselect-rust symlinks and paths"
@@ -216,9 +219,6 @@ multilib_src_install() {
 	if use clippy; then
 		echo /usr/bin/clippy-driver >> "${T}/provider-${P}"
 		echo /usr/bin/cargo-clippy >> "${T}/provider-${P}"
-	fi
-	if use rls; then
-		echo /usr/bin/rls >> "${T}/provider-${P}"
 	fi
 	if use rustfmt; then
 		echo /usr/bin/rustfmt >> "${T}/provider-${P}"
