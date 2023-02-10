@@ -10,42 +10,42 @@ DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
 		abi_x86_64? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-x86_64-unknown-linux-gnu.tar.xz -> rust-1.67.0-x86_64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-x86_64-unknown-linux-gnu.tar.xz -> rust-1.67.1-x86_64-unknown-linux-gnu.tar.xz
 	)
 	arm? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-arm-unknown-linux-gnueabi.tar.xz -> rust-1.67.0-arm-unknown-linux-gnueabi.tar.xz
-		https://static.rust-lang.org/dist/rust-1.67.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.67.0-arm-unknown-linux-gnueabihf.tar.xz
-		https://static.rust-lang.org/dist/rust-1.67.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.67.0-armv7-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-arm-unknown-linux-gnueabi.tar.xz -> rust-1.67.1-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.67.1-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.67.1-armv7-unknown-linux-gnueabihf.tar.xz
 	)
 	arm64? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.67.0-aarch64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-aarch64-unknown-linux-gnu.tar.xz -> rust-1.67.1-aarch64-unknown-linux-gnu.tar.xz
 	)
 	mips? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-mips64-unknown-linux-gnuabi64.tar.xz -> rust-1.67.0-mips64-unknown-linux-gnuabi64.tar.xz
-		https://static.rust-lang.org/dist/rust-1.67.0-mipsel-unknown-linux-gnu.tar.xz -> rust-1.67.0-mipsel-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.67.0-mips-unknown-linux-gnu.tar.xz -> rust-1.67.0-mips-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-mips64-unknown-linux-gnuabi64.tar.xz -> rust-1.67.1-mips64-unknown-linux-gnuabi64.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-mipsel-unknown-linux-gnu.tar.xz -> rust-1.67.1-mipsel-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-mips-unknown-linux-gnu.tar.xz -> rust-1.67.1-mips-unknown-linux-gnu.tar.xz
 	)
 	ppc? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-powerpc-unknown-linux-gnu.tar.xz -> rust-1.67.0-powerpc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-powerpc-unknown-linux-gnu.tar.xz -> rust-1.67.1-powerpc-unknown-linux-gnu.tar.xz
 	)
 	ppc64? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-powerpc64le-unknown-linux-gnu.tar.xz -> rust-1.67.0-powerpc64le-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.67.0-powerpc64-unknown-linux-gnu.tar.xz -> rust-1.67.0-powerpc64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-powerpc64le-unknown-linux-gnu.tar.xz -> rust-1.67.1-powerpc64le-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-powerpc64-unknown-linux-gnu.tar.xz -> rust-1.67.1-powerpc64-unknown-linux-gnu.tar.xz
 	)
 	s390? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-s390x-unknown-linux-gnu.tar.xz -> rust-1.67.0-s390x-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-s390x-unknown-linux-gnu.tar.xz -> rust-1.67.1-s390x-unknown-linux-gnu.tar.xz
 	)
 	abi_x86_32? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-i686-unknown-linux-gnu.tar.xz -> rust-1.67.0-i686-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-i686-unknown-linux-gnu.tar.xz -> rust-1.67.1-i686-unknown-linux-gnu.tar.xz
 	)
 	riscv64? ( 
-		https://static.rust-lang.org/dist/rust-1.67.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.67.0-riscv64gc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.67.1-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.67.1-riscv64gc-unknown-linux-gnu.tar.xz
 	)
 	rust-src? (
-		https://static.rust-lang.org/dist/rust-src-1.67.0.tar.xz -> rust-src-1.67.0.tar.xz
+		https://static.rust-lang.org/dist/rust-src-1.67.1.tar.xz -> rust-src-1.67.1.tar.xz
 	)
 	wasm? (
-		https://static.rust-lang.org/dist/rust-std-1.67.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.67.0-wasm32-unknown-unknown.tar.xz
+		https://static.rust-lang.org/dist/rust-std-1.67.1-wasm32-unknown-unknown.tar.xz -> rust-std-1.67.1-wasm32-unknown-unknown.tar.xz
 	)
 "
 
@@ -106,10 +106,10 @@ src_unpack() {
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
 		if use rust-src; then
-				mv "${WORKDIR}/rust-src-1.67.0/rust-src" "${S}"/rust-src
+				mv "${WORKDIR}/rust-src-1.67.1/rust-src" "${S}"/rust-src
 		fi
 		if use wasm; then
-				mv "${WORKDIR}/rust-std-1.67.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
+				mv "${WORKDIR}/rust-std-1.67.1-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
 		fi
 }
 
