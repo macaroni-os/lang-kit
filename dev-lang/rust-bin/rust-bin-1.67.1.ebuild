@@ -55,7 +55,7 @@ KEYWORDS="*"
 IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm"
 
 DEPEND="app-eselect/eselect-rust"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 BDEPEND="
 	prefix? ( dev-util/patchelf )
 "
