@@ -8,4 +8,4 @@ LICENSE=""
 SLOT="0"
 
 BDEPEND=""
-RDEPEND="|| ( ~dev-lang/zig-bin-0.11.0.2227 ~dev-lang/zig-0.11.0.2227 )"
+RDEPEND="|| ( ~dev-lang/zig-bin-0.11.0.2247 ~dev-lang/zig-0.11.0.2247 )"
