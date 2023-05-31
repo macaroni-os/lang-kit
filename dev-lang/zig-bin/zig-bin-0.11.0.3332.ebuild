@@ -4,9 +4,9 @@ EAPI=6
 
 DESCRIPTION="General-purpose programming language for robust, optimal, and reusable software"
 SRC_URI="
-	arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.11.0-dev.3322+82632aff2.tar.xz -> zig-linux-aarch64-0.11.0-dev.3322+82632aff2.tar.xz )
-	riscv64? ( https://ziglang.org/builds/zig-linux-riscv64-0.11.0-dev.3322+82632aff2.tar.xz -> zig-linux-riscv64-0.11.0-dev.3322+82632aff2.tar.xz )
-	amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.3322+82632aff2.tar.xz -> zig-linux-x86_64-0.11.0-dev.3322+82632aff2.tar.xz )"
+	arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.11.0-dev.3332+76aa1fffb.tar.xz -> zig-linux-aarch64-0.11.0-dev.3332+76aa1fffb.tar.xz )
+	riscv64? ( https://ziglang.org/builds/zig-linux-riscv64-0.11.0-dev.3332+76aa1fffb.tar.xz -> zig-linux-riscv64-0.11.0-dev.3332+76aa1fffb.tar.xz )
+	amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.3332+76aa1fffb.tar.xz -> zig-linux-x86_64-0.11.0-dev.3332+76aa1fffb.tar.xz )"
 HOMEPAGE="https://ziglang.org/"
 SLOT="0"
 LICENSE="MIT"
