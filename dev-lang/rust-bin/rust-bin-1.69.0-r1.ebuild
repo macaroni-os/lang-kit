@@ -9,13 +9,50 @@ MY_P="rust-${PV}"
 DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
-	{{ src_uri_template }}
+		abi_x86_64? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-x86_64-unknown-linux-gnu.tar.xz -> rust-1.69.0-x86_64-unknown-linux-gnu.tar.xz
+	)
+	arm? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-arm-unknown-linux-gnueabi.tar.xz -> rust-1.69.0-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.69.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.69.0-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.69.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.69.0-armv7-unknown-linux-gnueabihf.tar.xz
+	)
+	arm64? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.69.0-aarch64-unknown-linux-gnu.tar.xz
+	)
+	mips? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-mips64-unknown-linux-gnuabi64.tar.xz -> rust-1.69.0-mips64-unknown-linux-gnuabi64.tar.xz
+		https://static.rust-lang.org/dist/rust-1.69.0-mipsel-unknown-linux-gnu.tar.xz -> rust-1.69.0-mipsel-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.69.0-mips-unknown-linux-gnu.tar.xz -> rust-1.69.0-mips-unknown-linux-gnu.tar.xz
+	)
+	ppc? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-powerpc-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc-unknown-linux-gnu.tar.xz
+	)
+	ppc64? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-powerpc64le-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc64le-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.69.0-powerpc64-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc64-unknown-linux-gnu.tar.xz
+	)
+	s390? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-s390x-unknown-linux-gnu.tar.xz -> rust-1.69.0-s390x-unknown-linux-gnu.tar.xz
+	)
+	abi_x86_32? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-i686-unknown-linux-gnu.tar.xz -> rust-1.69.0-i686-unknown-linux-gnu.tar.xz
+	)
+	riscv64? ( 
+		https://static.rust-lang.org/dist/rust-1.69.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.69.0-riscv64gc-unknown-linux-gnu.tar.xz
+	)
+	rust-src? (
+		https://static.rust-lang.org/dist/rust-src-1.69.0.tar.xz -> rust-src-1.69.0.tar.xz
+	)
+	wasm? (
+		https://static.rust-lang.org/dist/rust-std-1.69.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.69.0-wasm32-unknown-unknown.tar.xz
+	)
 "
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 SLOT="stable"
 KEYWORDS="*"
-IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt {{ extra_component_data.keys() | join(" ") }}"
+IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm"
 RESTRICT="strip"
 DEPEND="app-eselect/eselect-rust"
 RDEPEND="${DEPEND}"
@@ -39,7 +76,23 @@ QA_PREBUILT="
 QA_EXECSTACK="opt/${P}/lib/rustlib/*/lib*.rlib:lib.rmeta"
 
 rust_abi() {
-{{ abi_getter_fn }}
+	local CTARGET=${1:-${CHOST}}
+	case ${CTARGET%%*-} in
+		x86_64*) echo x86_64-unknown-linux-gnu;;
+		armv6j*s*) echo arm-unknown-linux-gnueabi;;
+		armv6j*h*) echo arm-unknown-linux-gnueabihf;;
+		armv7a*h*) echo armv7-unknown-linux-gnueabihf;;
+		aarch64*) echo aarch64-unknown-linux-gnu;;
+		mips64*) echo mips64-unknown-linux-gnuabi64;;
+		mipsel*) echo mipsel-unknown-linux-gnu;;
+		mips*) echo mips-unknown-linux-gnu;;
+		powerpc*) echo powerpc-unknown-linux-gnu;;
+		powerpc64le*) echo powerpc64le-unknown-linux-gnu;;
+		powerpc64*) echo powerpc64-unknown-linux-gnu;;
+		s390x*) echo s390x-unknown-linux-gnu;;
+		i?86*) echo i686-unknown-linux-gnu;;
+		riscv64*) echo riscv64gc-unknown-linux-gnu;;
+	esac
 }
 
 pkg_pretend() {
@@ -52,26 +105,22 @@ src_unpack() {
 	default
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
-
-	{%- for component_name, component_data in extra_component_data.items() %}
-		if use {{ component_name }}; then
-			{%- for included_component in component_data.included_components %}
-				mv "${WORKDIR}/{{ component_data.extracted_name }}/{{ included_component }}" "${S}"/{{ included_component }}
-			{%- endfor %}
+		if use rust-src; then
+				mv "${WORKDIR}/rust-src-1.69.0/rust-src" "${S}"/rust-src
 		fi
-	{%- endfor %}
+		if use wasm; then
+				mv "${WORKDIR}/rust-std-1.69.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
+		fi
 }
 
 src_prepare() {
 	default
-
-	{%- for component_name, component_data in extra_component_data.items() %}
-		if use {{ component_name }}; then
-			{%- for included_component in component_data.included_components %}
-				echo "{{ included_component }}" >> components
-			{%- endfor %}
+		if use rust-src; then
+				echo "rust-src" >> components
 		fi
-	{%- endfor %}
+		if use wasm; then
+				echo "rust-std-wasm32-unknown-unknown" >> components
+		fi
 }
 
 patchelf_for_bin() {
@@ -96,10 +145,8 @@ multilib_src_install() {
 	use doc && components="${components},rust-docs"
 	use clippy && components="${components},clippy-preview"
 	use rustfmt && components="${components},rustfmt-preview"
-
-	{%- for component_name, component_data in extra_component_data.items() %}
-		use {{ component_name }} && components="${components},{{ component_data.included_components | join(",") }}"
-	{%- endfor %}
+		use rust-src && components="${components},rust-src"
+		use wasm && components="${components},rust-std-wasm32-unknown-unknown"
 
 	./install.sh \
 		--components="${components}" \

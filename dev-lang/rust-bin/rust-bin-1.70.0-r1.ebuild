@@ -53,7 +53,7 @@ LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 SLOT="stable"
 KEYWORDS="*"
 IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm"
-
+RESTRICT="strip"
 DEPEND="app-eselect/eselect-rust"
 RDEPEND="${DEPEND}"
 BDEPEND="
