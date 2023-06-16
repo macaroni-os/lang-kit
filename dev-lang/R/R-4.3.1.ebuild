@@ -10,7 +10,7 @@ BCPV=78d6830e28ea90a046da79a9b4f70c39594bb6d6
 DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="https://www.r-project.org/"
 SRC_URI="
-    https://cran.r-project.org/src/base/R-4/R-4.3.0.tar.gz -> R-4.3.0.tar.gz
+    https://cran.r-project.org/src/base/R-4/R-4.3.1.tar.gz -> R-4.3.1.tar.gz
     https://github.com/deepayan/rcompletion/archive/78d6830e28ea90a046da79a9b4f70c39594bb6d6.tar.gz -> rcompletion-78d6830e28ea90a046da79a9b4f70c39594bb6d6.tar.gz"
 
 LICENSE="|| ( GPL-2 GPL-3 ) LGPL-2.1"
