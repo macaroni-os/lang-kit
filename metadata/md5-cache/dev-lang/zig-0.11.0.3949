@@ -8,6 +8,6 @@ LICENSE=MIT
 RDEPEND=sys-devel/clang:13 >=sys-devel/lld-13 <sys-devel/lld-14 sys-devel/llvm:13[llvm_targets_AArch64,llvm_targets_AMDGPU,llvm_targets_ARM,llvm_targets_AVR,llvm_targets_BPF,llvm_targets_Hexagon,llvm_targets_Lanai,llvm_targets_Mips,llvm_targets_MSP430,llvm_targets_NVPTX,llvm_targets_PowerPC,llvm_targets_RISCV,llvm_targets_Sparc,llvm_targets_SystemZ,llvm_targets_WebAssembly,llvm_targets_X86,llvm_targets_XCore] !dev-lang/zig-bin
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://ziglang.org/builds/zig-0.11.0-dev.3947+89396ff02.tar.xz -> zig-0.11.0-dev.3947+89396ff02.tar.xz
+SRC_URI=https://ziglang.org/builds/zig-0.11.0-dev.3949+27a66191c.tar.xz -> zig-0.11.0-dev.3949+27a66191c.tar.xz
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	llvm	d6218c82a2f721c6a2c46c7eaf87e13b	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=f9742df816d1be86e452cf9906a0ae53
+_md5_=04e460a9798801bcc89a532991d1f411
