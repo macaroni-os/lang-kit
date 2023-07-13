@@ -11,4 +11,4 @@ SLOT="0"
 KEYWORDS="*"
 
 BDEPEND=""
-RDEPEND="|| ( ~dev-lang/rust-bin-1.70.0[${MULTILIB_USEDEP}] ~dev-lang/rust-1.70.0[${MULTILIB_USEDEP}] )"
+RDEPEND="|| ( ~dev-lang/rust-bin-1.71.0[${MULTILIB_USEDEP}] ~dev-lang/rust-1.71.0[${MULTILIB_USEDEP}] )"
