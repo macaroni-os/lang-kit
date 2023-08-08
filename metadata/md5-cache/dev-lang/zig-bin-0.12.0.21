@@ -7,5 +7,5 @@ IUSE=+doc
 LICENSE=MIT
 RDEPEND=!dev-lang/zig
 SLOT=0
-SRC_URI=amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-x86_64-0.12.0-dev.21+ac95cfe44.tar.xz ) arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-aarch64-0.12.0-dev.21+ac95cfe44.tar.xz ) arm? ( https://ziglang.org/builds/zig-linux-armv7a-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-armv7a-0.12.0-dev.21+ac95cfe44.tar.xz ) riscv64? ( https://ziglang.org/builds/zig-linux-riscv64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-riscv64-0.12.0-dev.21+ac95cfe44.tar.xz )
-_md5_=a9ba7841b59564d8a8aa4cc57a47f32f
+SRC_URI=arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-aarch64-0.12.0-dev.21+ac95cfe44.tar.xz ) arm? ( https://ziglang.org/builds/zig-linux-armv7a-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-armv7a-0.12.0-dev.21+ac95cfe44.tar.xz ) riscv64? ( https://ziglang.org/builds/zig-linux-riscv64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-riscv64-0.12.0-dev.21+ac95cfe44.tar.xz ) amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.12.0-dev.21+ac95cfe44.tar.xz -> zig-linux-x86_64-0.12.0-dev.21+ac95cfe44.tar.xz )
+_md5_=3217af2e66ecbfa6d87418cae1c4be3d
