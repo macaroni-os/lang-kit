@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="A Nim Wrapper for X11"
 HOMEPAGE="https://github.com/nim-lang/x11"
-SRC_URI="https://github.com/nim-lang/x11/archive/2093a4c01360cbb5dd33ab79fd4056e148b53ca1.tar.gz -> x11-20210107.tar.gz"
+SRC_URI="https://github.com/nim-lang/x11/archive/10f1c2f42759839f5e25f32c52e9f01103b64f59.tar.gz -> x11-20230810.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
