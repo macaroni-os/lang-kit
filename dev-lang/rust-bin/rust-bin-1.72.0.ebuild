@@ -10,42 +10,24 @@ DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
 		abi_x86_64? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-x86_64-unknown-linux-gnu.tar.xz -> rust-1.71.0-x86_64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-x86_64-unknown-linux-gnu.tar.xz -> rust-1.72.0-x86_64-unknown-linux-gnu.tar.xz
 	)
 	arm? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-arm-unknown-linux-gnueabi.tar.xz -> rust-1.71.0-arm-unknown-linux-gnueabi.tar.xz
-		https://static.rust-lang.org/dist/rust-1.71.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.71.0-arm-unknown-linux-gnueabihf.tar.xz
-		https://static.rust-lang.org/dist/rust-1.71.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.71.0-armv7-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-arm-unknown-linux-gnueabi.tar.xz -> rust-1.72.0-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.72.0-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.72.0-armv7-unknown-linux-gnueabihf.tar.xz
 	)
 	arm64? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.71.0-aarch64-unknown-linux-gnu.tar.xz
-	)
-	mips? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-mips64-unknown-linux-gnuabi64.tar.xz -> rust-1.71.0-mips64-unknown-linux-gnuabi64.tar.xz
-		https://static.rust-lang.org/dist/rust-1.71.0-mipsel-unknown-linux-gnu.tar.xz -> rust-1.71.0-mipsel-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.71.0-mips-unknown-linux-gnu.tar.xz -> rust-1.71.0-mips-unknown-linux-gnu.tar.xz
-	)
-	ppc? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-powerpc-unknown-linux-gnu.tar.xz -> rust-1.71.0-powerpc-unknown-linux-gnu.tar.xz
-	)
-	ppc64? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-powerpc64le-unknown-linux-gnu.tar.xz -> rust-1.71.0-powerpc64le-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.71.0-powerpc64-unknown-linux-gnu.tar.xz -> rust-1.71.0-powerpc64-unknown-linux-gnu.tar.xz
-	)
-	s390? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-s390x-unknown-linux-gnu.tar.xz -> rust-1.71.0-s390x-unknown-linux-gnu.tar.xz
-	)
-	abi_x86_32? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-i686-unknown-linux-gnu.tar.xz -> rust-1.71.0-i686-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.72.0-aarch64-unknown-linux-gnu.tar.xz
 	)
 	riscv64? ( 
-		https://static.rust-lang.org/dist/rust-1.71.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.71.0-riscv64gc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.72.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.72.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
 	rust-src? (
-		https://static.rust-lang.org/dist/rust-src-1.71.0.tar.xz -> rust-src-1.71.0.tar.xz
+		https://static.rust-lang.org/dist/rust-src-1.72.0.tar.xz -> rust-src-1.72.0.tar.xz
 	)
 	wasm? (
-		https://static.rust-lang.org/dist/rust-std-1.71.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.71.0-wasm32-unknown-unknown.tar.xz
+		https://static.rust-lang.org/dist/rust-std-1.72.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.72.0-wasm32-unknown-unknown.tar.xz
 	)
 "
 
@@ -83,14 +65,6 @@ rust_abi() {
 		armv6j*h*) echo arm-unknown-linux-gnueabihf;;
 		armv7a*h*) echo armv7-unknown-linux-gnueabihf;;
 		aarch64*) echo aarch64-unknown-linux-gnu;;
-		mips64*) echo mips64-unknown-linux-gnuabi64;;
-		mipsel*) echo mipsel-unknown-linux-gnu;;
-		mips*) echo mips-unknown-linux-gnu;;
-		powerpc*) echo powerpc-unknown-linux-gnu;;
-		powerpc64le*) echo powerpc64le-unknown-linux-gnu;;
-		powerpc64*) echo powerpc64-unknown-linux-gnu;;
-		s390x*) echo s390x-unknown-linux-gnu;;
-		i?86*) echo i686-unknown-linux-gnu;;
 		riscv64*) echo riscv64gc-unknown-linux-gnu;;
 	esac
 }
@@ -106,10 +80,10 @@ src_unpack() {
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
 		if use rust-src; then
-				mv "${WORKDIR}/rust-src-1.71.0/rust-src" "${S}"/rust-src
+				mv "${WORKDIR}/rust-src-1.72.0/rust-src" "${S}"/rust-src
 		fi
 		if use wasm; then
-				mv "${WORKDIR}/rust-std-1.71.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
+				mv "${WORKDIR}/rust-std-1.72.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
 		fi
 }
 

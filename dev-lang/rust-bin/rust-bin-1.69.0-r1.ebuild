@@ -20,24 +20,6 @@ SRC_URI="
 	arm64? ( 
 		https://static.rust-lang.org/dist/rust-1.69.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.69.0-aarch64-unknown-linux-gnu.tar.xz
 	)
-	mips? ( 
-		https://static.rust-lang.org/dist/rust-1.69.0-mips64-unknown-linux-gnuabi64.tar.xz -> rust-1.69.0-mips64-unknown-linux-gnuabi64.tar.xz
-		https://static.rust-lang.org/dist/rust-1.69.0-mipsel-unknown-linux-gnu.tar.xz -> rust-1.69.0-mipsel-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.69.0-mips-unknown-linux-gnu.tar.xz -> rust-1.69.0-mips-unknown-linux-gnu.tar.xz
-	)
-	ppc? ( 
-		https://static.rust-lang.org/dist/rust-1.69.0-powerpc-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc-unknown-linux-gnu.tar.xz
-	)
-	ppc64? ( 
-		https://static.rust-lang.org/dist/rust-1.69.0-powerpc64le-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc64le-unknown-linux-gnu.tar.xz
-		https://static.rust-lang.org/dist/rust-1.69.0-powerpc64-unknown-linux-gnu.tar.xz -> rust-1.69.0-powerpc64-unknown-linux-gnu.tar.xz
-	)
-	s390? ( 
-		https://static.rust-lang.org/dist/rust-1.69.0-s390x-unknown-linux-gnu.tar.xz -> rust-1.69.0-s390x-unknown-linux-gnu.tar.xz
-	)
-	abi_x86_32? ( 
-		https://static.rust-lang.org/dist/rust-1.69.0-i686-unknown-linux-gnu.tar.xz -> rust-1.69.0-i686-unknown-linux-gnu.tar.xz
-	)
 	riscv64? ( 
 		https://static.rust-lang.org/dist/rust-1.69.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.69.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
@@ -83,14 +65,6 @@ rust_abi() {
 		armv6j*h*) echo arm-unknown-linux-gnueabihf;;
 		armv7a*h*) echo armv7-unknown-linux-gnueabihf;;
 		aarch64*) echo aarch64-unknown-linux-gnu;;
-		mips64*) echo mips64-unknown-linux-gnuabi64;;
-		mipsel*) echo mipsel-unknown-linux-gnu;;
-		mips*) echo mips-unknown-linux-gnu;;
-		powerpc*) echo powerpc-unknown-linux-gnu;;
-		powerpc64le*) echo powerpc64le-unknown-linux-gnu;;
-		powerpc64*) echo powerpc64-unknown-linux-gnu;;
-		s390x*) echo s390x-unknown-linux-gnu;;
-		i?86*) echo i686-unknown-linux-gnu;;
 		riscv64*) echo riscv64gc-unknown-linux-gnu;;
 	esac
 }
