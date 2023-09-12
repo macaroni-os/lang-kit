@@ -49,6 +49,10 @@ README.md
 SECURITY.md
 )
 
+PATCHES=(
+	"${FILESDIR}"/go-never-download-newer-toolchains.patch
+)
+
 go_arch() {
 	# By chance most portage arch names match Go
 	local portage_arch=$(tc-arch $@)
@@ -149,6 +153,11 @@ src_install() {
 	dodir /usr/lib/go
 	cp -R api bin doc lib pkg misc src test "${ED}"/usr/lib/go
 	einstalldocs
+
+	if [ -f go.env ]; then
+		insinto /usr/lib/go
+		doins go.env
+	fi
 
 	# testdata directories are not needed on the installed system
 	rm -fr $(find "${ED}"/usr/lib/go -iname testdata -type d -print)
