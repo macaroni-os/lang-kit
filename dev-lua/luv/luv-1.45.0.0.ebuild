@@ -11,10 +11,10 @@ MY_P="${PN}-${MY_PV}"
 DESCRIPTION="Bare libuv bindings for lua"
 HOMEPAGE="https://github.com/luvit/luv"
 
-LUA_COMPAT_PV="0.9"
+LUA_COMPAT_PV="0.11"
 SRC_URI="
 	https://github.com/luvit/luv/releases/download/1.45.0-0/luv-1.45.0-0.tar.gz -> luv-1.45.0.0.tar.gz
-	https://github.com/keplerproject/lua-compat-5.3/archive/v0.9.tar.gz -> luv-lua-compat-0.9.tar.gz
+	https://github.com/keplerproject/lua-compat-5.3/archive/v0.11.tar.gz -> luv-lua-compat-0.11.tar.gz
 "
 
 LICENSE="Apache-2.0 MIT"
