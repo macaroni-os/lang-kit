@@ -10,6 +10,6 @@ LICENSE=Apache-2.0 MIT
 RDEPEND=>=dev-libs/libuv-1.32.0:= luajit? ( dev-lang/luajit:2 ) !luajit? ( dev-lang/lua:0 )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/luvit/luv/releases/download/1.45.0-0/luv-1.45.0-0.tar.gz -> luv-1.45.0.0.tar.gz https://github.com/keplerproject/lua-compat-5.3/archive/v0.11.tar.gz -> luv-lua-compat-0.11.tar.gz
+SRC_URI=https://github.com/luvit/luv/releases/download/1.45.0-0/luv-1.45.0-0.tar.gz -> luv-1.45.0.0.tar.gz https://github.com/keplerproject/lua-compat-5.3/archive/v0.12.tar.gz -> luv-lua-compat-0.12.tar.gz
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	unpacker	cbd6624f820a4289653f5dcb999bea7a	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=071306c008dd37be7b9b98d5c9d887b4
+_md5_=c6ac00b581bf5f0adaea96ed318c9018
