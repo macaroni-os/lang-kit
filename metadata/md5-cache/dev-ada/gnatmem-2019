@@ -1,4 +1,4 @@
-BDEPEND=>=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
 DEFINED_PHASES=compile install prepare
 DEPEND=dev-ada/gprbuild[gnat_2016(-)?,gnat_2017(-)?,gnat_2018(-)?,gnat_2019(-)?] sys-libs/binutils-libs
 DESCRIPTION=Monitors dynamic allocation and deallocation activity in a program
@@ -10,5 +10,5 @@ LICENSE=GPL-3
 REQUIRED_USE=^^ ( gnat_2016 gnat_2017 gnat_2018 gnat_2019 )
 SLOT=0
 SRC_URI=http://mirrors.cdn.adacore.com/art/5cdf8e1431e87a8f1d425089 -> gnatmem-2019-20190429-19745-src.tar.gz
-_eclasses_=autotools	5223f703a2e9c194fcda924f8c4b6baf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	e9ade2787b2f54643c7cdffbfa1cca9c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=acaf725f0dee1229e932a7ac6eecf6da

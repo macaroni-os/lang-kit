@@ -1,4 +1,4 @@
-BDEPEND=>=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
 DEFINED_PHASES=compile install
 DEPEND=gnat_2018? ( dev-lang/gnat-gpl:7.3.1 ) gnat_2019? ( dev-lang/gnat-gpl:8.3.1 )
 DESCRIPTION=Translates addresses into filename, line number, and function names
@@ -10,5 +10,5 @@ LICENSE=GPL-3
 REQUIRED_USE=^^ ( gnat_2018 gnat_2019 )
 SLOT=0
 SRC_URI=http://mirrors.cdn.adacore.com/art/5cc7d5e431e87a23952f18c4 -> gnatsymbolize-2019-20190429-19761-src.tar.gz
-_eclasses_=autotools	5223f703a2e9c194fcda924f8c4b6baf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	e9ade2787b2f54643c7cdffbfa1cca9c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=88c87359acbead20a4397e424f19475b
