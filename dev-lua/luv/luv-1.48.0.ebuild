@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/luvit/luv"
 
 LUA_COMPAT_PV="0.13"
 SRC_URI="https://github.com/luvit/luv/tarball/7233e6dea92498a244feb51b790c1ba51e8abbff -> luv-1.48.0-7233e6d.tar.gz
-https://github.com/keplerproject/lua-compat-5.3/tarball/7af7bf7e0db3c9d88881fdf10d880a6e2ab1d095 -> lua-compat-5.3-0.13-7af7bf7.tar.gz"
+https://github.com/lunarmodules/lua-compat-5.3/tarball/7af7bf7e0db3c9d88881fdf10d880a6e2ab1d095 -> lua-compat-5.3-0.13-7af7bf7.tar.gz"
 
 LICENSE="Apache-2.0 MIT"
 SLOT="0"
@@ -30,6 +30,18 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
+lua_compat_dir="${WORKDIR}/lua-compat-5.3-${LUA_COMPAT_PV}"
+
+src_unpack() {
+	default
+	if [[ ! -d ${S} ]]; then
+		mv -v "${WORKDIR}"/*-luv-* "${S}" || die
+	fi
+	if [[ ! -d ${lua_compat_dir} ]]; then
+		mv -v "${WORKDIR}"/*-lua-compat-* "${lua_compat_dir}" || die
+	fi
+}
+
 
 src_prepare() {
 	# Fix libdir
@@ -39,7 +51,6 @@ src_prepare() {
 }
 
 src_configure() {
-	lua_compat_dir="${WORKDIR}/lua-compat-5.3-${LUA_COMPAT_PV}"
 	local mycmakeargs=(
 		-DBUILD_MODULE=OFF
 		-DLUA_BUILD_TYPE=System
