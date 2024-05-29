@@ -29,12 +29,15 @@ SRC_URI="
 	wasm? (
 		https://static.rust-lang.org/dist/rust-std-1.69.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.69.0-wasm32-unknown-unknown.tar.xz
 	)
+	wasm-wasi? (
+		https://static.rust-lang.org/dist/rust-std-1.69.0-wasm32-wasi.tar.xz -> rust-std-1.69.0-wasm32-wasi.tar.xz
+	)
 "
 
 LICENSE="|| ( MIT Apache-2.0 ) BSD-1 BSD-2 BSD-4 UoI-NCSA"
 SLOT="stable"
 KEYWORDS="*"
-IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm"
+IUSE="clippy cpu_flags_x86_sse2 doc prefix rustfmt rust-src wasm wasm-wasi"
 RESTRICT="strip"
 DEPEND="app-eselect/eselect-rust"
 RDEPEND="${DEPEND}"
@@ -85,6 +88,9 @@ src_unpack() {
 		if use wasm; then
 				mv "${WORKDIR}/rust-std-1.69.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
 		fi
+		if use wasm-wasi; then
+				mv "${WORKDIR}/rust-std-1.69.0-wasm32-wasi/rust-std-wasm32-wasi" "${S}"/rust-std-wasm32-wasi
+		fi
 }
 
 src_prepare() {
@@ -94,6 +100,9 @@ src_prepare() {
 		fi
 		if use wasm; then
 				echo "rust-std-wasm32-unknown-unknown" >> components
+		fi
+		if use wasm-wasi; then
+				echo "rust-std-wasm32-wasi" >> components
 		fi
 }
 
@@ -121,6 +130,7 @@ multilib_src_install() {
 	use rustfmt && components="${components},rustfmt-preview"
 		use rust-src && components="${components},rust-src"
 		use wasm && components="${components},rust-std-wasm32-unknown-unknown"
+		use wasm-wasi && components="${components},rust-std-wasm32-wasi"
 
 	./install.sh \
 		--components="${components}" \
