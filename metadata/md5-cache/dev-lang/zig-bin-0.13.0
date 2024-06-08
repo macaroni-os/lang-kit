@@ -8,5 +8,5 @@ KEYWORDS=*
 LICENSE=MIT
 RDEPEND=!dev-lang/zig
 SLOT=0
-SRC_URI=amd64? ( https://ziglang.org/builds/zig-linux-x86_64-0.13.0.tar.xz -> zig-linux-x86_64-0.13.0.tar.xz ) arm? ( https://ziglang.org/builds/zig-linux-armv7a-0.13.0.tar.xz -> zig-linux-armv7a-0.13.0.tar.xz ) arm64? ( https://ziglang.org/builds/zig-linux-aarch64-0.13.0.tar.xz -> zig-linux-aarch64-0.13.0.tar.xz ) riscv64? ( https://ziglang.org/builds/zig-linux-riscv64-0.13.0.tar.xz -> zig-linux-riscv64-0.13.0.tar.xz )
-_md5_=e025b29d10c5fbdc3d7a5a8aa5a0fdc4
+SRC_URI=amd64? ( https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -> zig-linux-x86_64-0.13.0.tar.xz ) arm? ( https://ziglang.org/download/0.13.0/zig-linux-armv7a-0.13.0.tar.xz -> zig-linux-armv7a-0.13.0.tar.xz ) arm64? ( https://ziglang.org/download/0.13.0/zig-linux-aarch64-0.13.0.tar.xz -> zig-linux-aarch64-0.13.0.tar.xz ) riscv64? ( https://ziglang.org/download/0.13.0/zig-linux-riscv64-0.13.0.tar.xz -> zig-linux-riscv64-0.13.0.tar.xz )
+_md5_=eaac11ec42c826c8f0d153feb5398fd7
