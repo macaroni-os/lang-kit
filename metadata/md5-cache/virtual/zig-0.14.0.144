@@ -1,6 +1,0 @@
-DEFINED_PHASES=-
-DESCRIPTION=Virtual for Zig language compiler
-EAPI=7
-RDEPEND=|| ( ~dev-lang/zig-bin-0.14.0.144 ~dev-lang/zig-0.14.0.144 )
-SLOT=0
-_md5_=6ab605516ba01d16d2a063a051ee5cd6
