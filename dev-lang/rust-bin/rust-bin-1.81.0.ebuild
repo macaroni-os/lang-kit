@@ -10,27 +10,27 @@ DESCRIPTION="Systems programming language from Mozilla"
 HOMEPAGE="https://www.rust-lang.org/"
 SRC_URI="
 		abi_x86_64? ( 
-		https://static.rust-lang.org/dist/rust-1.80.1-x86_64-unknown-linux-gnu.tar.xz -> rust-1.80.1-x86_64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-x86_64-unknown-linux-gnu.tar.xz -> rust-1.81.0-x86_64-unknown-linux-gnu.tar.xz
 	)
 	arm? ( 
-		https://static.rust-lang.org/dist/rust-1.80.1-arm-unknown-linux-gnueabi.tar.xz -> rust-1.80.1-arm-unknown-linux-gnueabi.tar.xz
-		https://static.rust-lang.org/dist/rust-1.80.1-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.80.1-arm-unknown-linux-gnueabihf.tar.xz
-		https://static.rust-lang.org/dist/rust-1.80.1-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.80.1-armv7-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-arm-unknown-linux-gnueabi.tar.xz -> rust-1.81.0-arm-unknown-linux-gnueabi.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-arm-unknown-linux-gnueabihf.tar.xz -> rust-1.81.0-arm-unknown-linux-gnueabihf.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-armv7-unknown-linux-gnueabihf.tar.xz -> rust-1.81.0-armv7-unknown-linux-gnueabihf.tar.xz
 	)
 	arm64? ( 
-		https://static.rust-lang.org/dist/rust-1.80.1-aarch64-unknown-linux-gnu.tar.xz -> rust-1.80.1-aarch64-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-aarch64-unknown-linux-gnu.tar.xz -> rust-1.81.0-aarch64-unknown-linux-gnu.tar.xz
 	)
 	riscv64? ( 
-		https://static.rust-lang.org/dist/rust-1.80.1-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.80.1-riscv64gc-unknown-linux-gnu.tar.xz
+		https://static.rust-lang.org/dist/rust-1.81.0-riscv64gc-unknown-linux-gnu.tar.xz -> rust-1.81.0-riscv64gc-unknown-linux-gnu.tar.xz
 	)
 	rust-src? (
-		https://static.rust-lang.org/dist/rust-src-1.80.1.tar.xz -> rust-src-1.80.1.tar.xz
+		https://static.rust-lang.org/dist/rust-src-1.81.0.tar.xz -> rust-src-1.81.0.tar.xz
 	)
 	wasm? (
-		https://static.rust-lang.org/dist/rust-std-1.80.1-wasm32-unknown-unknown.tar.xz -> rust-std-1.80.1-wasm32-unknown-unknown.tar.xz
+		https://static.rust-lang.org/dist/rust-std-1.81.0-wasm32-unknown-unknown.tar.xz -> rust-std-1.81.0-wasm32-unknown-unknown.tar.xz
 	)
 	wasm-wasi? (
-		https://static.rust-lang.org/dist/rust-std-1.80.1-wasm32-wasi.tar.xz -> rust-std-1.80.1-wasm32-wasi.tar.xz
+		https://static.rust-lang.org/dist/rust-std-1.81.0-wasm32-wasi.tar.xz -> rust-std-1.81.0-wasm32-wasi.tar.xz
 	)
 "
 
@@ -83,13 +83,13 @@ src_unpack() {
 
 	mv "${WORKDIR}/${MY_P}-$(rust_abi)" "${S}" || die
 		if use rust-src; then
-				mv "${WORKDIR}/rust-src-1.80.1/rust-src" "${S}"/rust-src
+				mv "${WORKDIR}/rust-src-1.81.0/rust-src" "${S}"/rust-src
 		fi
 		if use wasm; then
-				mv "${WORKDIR}/rust-std-1.80.1-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
+				mv "${WORKDIR}/rust-std-1.81.0-wasm32-unknown-unknown/rust-std-wasm32-unknown-unknown" "${S}"/rust-std-wasm32-unknown-unknown
 		fi
 		if use wasm-wasi; then
-				mv "${WORKDIR}/rust-std-1.80.1-wasm32-wasi/rust-std-wasm32-wasi" "${S}"/rust-std-wasm32-wasi
+				mv "${WORKDIR}/rust-std-1.81.0-wasm32-wasi/rust-std-wasm32-wasi" "${S}"/rust-std-wasm32-wasi
 		fi
 }
 
