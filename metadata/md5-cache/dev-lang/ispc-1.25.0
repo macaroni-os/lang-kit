@@ -9,6 +9,6 @@ KEYWORDS=*
 LICENSE=BSD BSD-2 UoI-NCSA
 RDEPEND=<sys-devel/clang-13:=
 SLOT=0
-SRC_URI=https://api.github.com/repos/ispc/ispc/tarball/v1.24.0 -> ispc-1.24.0.tar.gz
+SRC_URI=https://api.github.com/repos/ispc/ispc/tarball/v1.25.0 -> ispc-1.25.0.tar.gz
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	llvm	cecd9f7cf6cb249ceb94806cfe29d334	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	d3f9ec72badd0291b655682d67876adc	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=de37d190f1b79f84b7f47a72540967be
+_md5_=c08784582f449fae4a4d011d163baa01
