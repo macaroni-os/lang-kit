@@ -1,4 +1,6 @@
 dev-lang
+dev-lua
 dev-scheme
+dev-tcltk
 net-libs
 virtual
