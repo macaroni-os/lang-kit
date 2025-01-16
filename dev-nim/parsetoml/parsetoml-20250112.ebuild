@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="A Nim library to parse TOML files"
 HOMEPAGE="https://github.com/NimParsers/parsetoml"
-SRC_URI="https://github.com/NimParsers/parsetoml/archive/6e5e16179fa2db60f2f37d8b1af4128aaa9c8aaf.tar.gz -> parsetoml-20230805.tar.gz"
+SRC_URI="https://github.com/NimParsers/parsetoml/archive/d297f5a81be2472905d367aa675dcbbca6e7a5d2.tar.gz -> parsetoml-20250112.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
