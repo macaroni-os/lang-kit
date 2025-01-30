@@ -10,6 +10,6 @@ LICENSE=Apache-2.0 MIT
 RDEPEND=>=dev-libs/libuv-1.32.0:= luajit? ( dev-lang/luajit:2 ) !luajit? ( dev-lang/lua:0 )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/luvit/luv/tarball/7aeed6f089e85c3e81aa99a391ee9d48db266e21 -> luv-1.50.0-7aeed6f.tar.gz https://github.com/lunarmodules/lua-compat-5.3/tarball/64ed183ab243cdc737203e835892b4e6cb446e46 -> lua-compat-5.3-0.14.3-64ed183.tar.gz
+SRC_URI=https://github.com/luvit/luv/tarball/7aeed6f089e85c3e81aa99a391ee9d48db266e21 -> luv-1.50.0-7aeed6f.tar.gz https://github.com/lunarmodules/lua-compat-5.3/tarball/2155a2f28372282f7f0fd084d8e6facf3e79b5f0 -> lua-compat-5.3-0.14.4-2155a2f.tar.gz
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	unpacker	cbd6624f820a4289653f5dcb999bea7a	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=7ff338f9b47db3d47d0ff35293eb3ea0
+_md5_=d6f0280003854bc3fb64ac1aa0e07a24
