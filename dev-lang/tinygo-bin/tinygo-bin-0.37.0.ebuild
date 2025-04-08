@@ -8,10 +8,10 @@ S=${WORKDIR}/${MY_PN}
 DESCRIPTION="Go compiler for small places. Microcontrollers, WebAssembly (WASM/WASI), and command-line tools. Based on LLVM."
 HOMEPAGE="https://github.com/tinygo-org/tinygo https://tinygo.org/"
 SRC_URI="amd64? (
-  https://github.com/tinygo-org/tinygo/releases/download/v0.36.0/tinygo0.36.0.linux-amd64.tar.gz -> tinygo0.36.0.linux-amd64.tar.gz
+  https://github.com/tinygo-org/tinygo/releases/download/v0.37.0/tinygo0.37.0.linux-amd64.tar.gz -> tinygo0.37.0.linux-amd64.tar.gz
 )
 arm64? (
-  https://github.com/tinygo-org/tinygo/releases/download/v0.36.0/tinygo0.36.0.linux-arm64.tar.gz -> tinygo0.36.0.linux-arm64.tar.gz
+  https://github.com/tinygo-org/tinygo/releases/download/v0.37.0/tinygo0.37.0.linux-arm64.tar.gz -> tinygo0.37.0.linux-arm64.tar.gz
 )
 "
 
