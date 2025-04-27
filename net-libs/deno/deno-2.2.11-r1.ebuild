@@ -32,10 +32,12 @@ src_unpack() {
 src_compile() {
 	# Don't try to fetch prebuilt V8, build it instead
 	export V8_FROM_SOURCE=1
-	cargo_src_compile
+    cargo_src_compile
 }
 
 src_install() {
 	# Install the binary directly, cargo install doesn't work on workspaces
 	dobin target/release/deno
+
+	dodoc -r docs
 }
