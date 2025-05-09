@@ -1,7 +1,9 @@
+dev-ada
 dev-dotnet
+dev-erlang
+dev-go
 dev-lang
 dev-lua
-dev-scheme
+dev-nim
 dev-tcltk
-net-libs
 virtual
