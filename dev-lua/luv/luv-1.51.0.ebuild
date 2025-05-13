@@ -12,7 +12,7 @@ DESCRIPTION="Bare libuv bindings for lua"
 HOMEPAGE="https://github.com/luvit/luv"
 
 LUA_COMPAT_PV="0.14.4"
-SRC_URI="https://github.com/luvit/luv/tarball/657a08fefcfe72bdabe90b63984c1b39dbcf75a4 -> luv-1.50.0-657a08f.tar.gz
+SRC_URI="https://github.com/luvit/luv/tarball/83adae70cf0cf9231a733e2ec1bfbc92a8050b5f -> luv-1.51.0-83adae7.tar.gz
 https://github.com/lunarmodules/lua-compat-5.3/tarball/2155a2f28372282f7f0fd084d8e6facf3e79b5f0 -> lua-compat-5.3-0.14.4-2155a2f.tar.gz"
 
 LICENSE="Apache-2.0 MIT"
