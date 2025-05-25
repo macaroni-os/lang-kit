@@ -6,8 +6,6 @@ DESCRIPTION="Virtual for Zig language compiler"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="*"
-
 
 BDEPEND=""
-RDEPEND="|| ( ~dev-lang/zig-bin-0.14.0 ~dev-lang/zig-0.14.0 )"
+RDEPEND="|| ( ~dev-lang/zig-bin-0.15.0.631 ~dev-lang/zig-0.15.0.631 )"
