@@ -1,0 +1,15 @@
+# Distributed under the terms of the GNU General Public License v2
+# Autogen by MARK Devkit
+
+EAPI=7
+
+DESCRIPTION="Virtual for Zig language compiler"
+HOMEPAGE="https://ziglang.org/"
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="*"
+RDEPEND="|| ( ~dev-lang/zig-bin-0.15.2 ~dev-lang/zig-0.15.2 )
+	
+"
+
+# vim: filetype=ebuild
