@@ -38,6 +38,4 @@ src_compile() {
 src_install() {
 	# Install the binary directly, cargo install doesn't work on workspaces
 	dobin target/release/deno
-
-	dodoc -r docs
 }
