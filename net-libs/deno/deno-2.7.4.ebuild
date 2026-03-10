@@ -24,10 +24,16 @@ post_src_unpack() {
 	rm -rf "${S}" || true
 	mv denoland-deno-* "${S}"
 }
+src_configure() {
+	export MAKEOPTS="-j1"
+	cargo_gen_config
+}
 src_compile() {
-	# Don't try to fetch prebuilt V8, build it instead
-	export V8_FROM_SOURCE=1
-	cargo_src_compile
+	export CARGO_BUILD_JOBS=1
+	export CARGO_INCREMENTAL=0
+	export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+	export NINJAFLAGS="-j1"
+	 cargo build --release || die "cargo build failed"
 }
 src_install() {
 	# Install the binary directly, cargo install doesn't work on workspaces
