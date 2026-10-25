@@ -1,5 +1,6 @@
 dev-lang
 dev-lua
+dev-node
 dev-scheme
 dev-tcltk
 net-libs
