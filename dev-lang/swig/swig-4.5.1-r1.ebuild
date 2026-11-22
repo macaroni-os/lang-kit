@@ -17,7 +17,7 @@ DOCS=(
 	TODO
 )
 IUSE="ccache pcre"
-RDEPEND="pcre? ( dev-libs/libpcre )
+RDEPEND="pcre? ( dev-libs/libpcre2 )
 	ccache? ( sys-libs/zlib )
 	
 "
